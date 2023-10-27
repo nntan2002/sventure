@@ -3,8 +3,10 @@
         <header>
             <b-container>
                 <div class="logo-header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/512px-Flat_tick_icon.svg.png"
-                        alt="">
+                    <img src="~/assets/images/logo-sventure-01.png" alt="">
+                </div>
+                <div class="menu">
+                    
                 </div>
             </b-container>
         </header>

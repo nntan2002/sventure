@@ -2,7 +2,7 @@
     <div class="page-wrap">
         <Header-item />
         <nuxt />
-        <Footer-iten />
+        <Footer-item />
     </div>
 </template>
     

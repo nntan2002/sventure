@@ -101,12 +101,18 @@
                     <div class="user">
                         <div class="user-item">
                             <a href="#" class="btn-main login">
-                                <i class="fas fa-user"></i> Log In
+                                <i class="fas fa-user"></i>
+                                <span>
+                                    Log In
+                                </span>
                             </a>
                         </div>
                         <div class="user-item">
                             <a href="#" class="btn-main signup">
-                                <i class="fas fa-user-plus"></i> Sign Up
+                                <i class="fas fa-user-plus"></i>
+                                <span>
+                                    Sign Up
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -115,7 +121,14 @@
         </header>
 
         <div class="menu-mobile">
-            
+            <div class="top-menu-mobile">
+                <div class="logo">
+                    <img src="~/assets/images/logo-sventure-01.png" />
+                </div>
+                <div class="btn-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
         </div>
     </div>
 </template>

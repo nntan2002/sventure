@@ -8,7 +8,7 @@
                             <img src="~/assets/images/logo-sventure-01.png" alt="">
                         </nuxt-link>
                     </div>
-                    <div class="menu">
+                    <div class="menu d-lg-flex d-none">
                         <div class="menu-item">
                             <div class="icon">
                                 <svg width="25px" height="25px" viewBox="0 0 18 18" version="1.1"
@@ -87,6 +87,48 @@
                                             Contact
                                         </nuxt-link>
                                     </li>
+                                    <li class="has-child-menu-item">
+                                        <nuxt-link to="#">
+                                            Category 1
+                                        </nuxt-link>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <nuxt-link to="#">
+                                                    Category 1
+                                                </nuxt-link>
+                                            </li>
+                                            <li>
+                                                <nuxt-link to="#">
+                                                    Category 2
+                                                </nuxt-link>
+                                            </li>
+                                            <li>
+                                                <nuxt-link to="#">
+                                                    Category 3
+                                                </nuxt-link>
+                                            </li>
+                                            <li>
+                                                <nuxt-link to="#">
+                                                    Category 4
+                                                </nuxt-link>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <nuxt-link to="#">
+                                            Category 2
+                                        </nuxt-link>
+                                    </li>
+                                    <li>
+                                        <nuxt-link to="#">
+                                            Category 3
+                                        </nuxt-link>
+                                    </li>
+                                    <li>
+                                        <nuxt-link to="#">
+                                            Category 4
+                                        </nuxt-link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -98,7 +140,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="user">
+                    <div class="user d-lg-flex d-none">
                         <div class="user-item">
                             <a href="#" class="btn-main login">
                                 <i class="fas fa-user"></i>
@@ -116,19 +158,134 @@
                             </a>
                         </div>
                     </div>
+                    <div class="bars-icon d-lg-none" @click="active_siderbar = true">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </b-container>
         </header>
 
-        <div class="menu-mobile">
-            <div class="top-menu-mobile">
-                <div class="logo">
-                    <img src="~/assets/images/logo-sventure-01.png" />
+        <div class="menu-mobile" :class="{ 'active-menu': active_siderbar }">
+            <div class="menu-mobile-item">
+                <div class="top-menu-mobile">
+                    <div class="logo">
+                        <img src="~/assets/images/logo-sventure-01.png" />
+                    </div>
+                    <div class="btn-close" @click="active_siderbar = false">
+                        <i class="fas fa-times"></i>
+                    </div>
                 </div>
-                <div class="btn-close">
-                    <i class="fas fa-times"></i>
+                <div class="bottom-menu-mobile">
+                    <ul class="menu1">
+                        <li>
+                            <nuxt-link to="#">
+                                Home
+                            </nuxt-link>
+                        </li>
+                        <li>
+                            <nuxt-link to="#">
+                                About Us
+                            </nuxt-link>
+                        </li>
+                        <li class="has-child-menu-item">
+                            <a href="#">
+                                Categories
+
+                                <span @click="clickspan($event)">
+                                    +
+                                </span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="has-child-menu-item">
+                                    <nuxt-link to="#">
+                                        Category 1
+                                        <span @click="clickspan($event)">
+                                            +
+                                        </span>
+                                    </nuxt-link>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <nuxt-link to="#">
+                                                Category 1
+                                            </nuxt-link>
+                                        </li>
+                                        <li>
+                                            <nuxt-link to="#">
+                                                Category 2
+                                            </nuxt-link>
+                                        </li>
+                                        <li>
+                                            <nuxt-link to="#">
+                                                Category 3
+                                            </nuxt-link>
+                                        </li>
+                                        <li>
+                                            <nuxt-link to="#">
+                                                Category 4
+                                            </nuxt-link>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <nuxt-link to="#">
+                                        Category 2
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link to="#">
+                                        Category 3
+                                    </nuxt-link>
+                                </li>
+                                <li>
+                                    <nuxt-link to="#">
+                                        Category 4
+                                    </nuxt-link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <nuxt-link to="#">
+                                Contact
+                            </nuxt-link>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="user">
+                    <div class="user-item">
+                        <a href="#" class="btn-main login">
+                            <i class="fas fa-user"></i>
+                            <span>
+                                Log In
+                            </span>
+                        </a>
+                    </div>
+                    <div class="user-item">
+                        <a href="#" class="btn-main signup">
+                            <i class="fas fa-user-plus"></i>
+                            <span>
+                                Sign Up
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            active_siderbar: false
+        }
+    },
+    methods: {
+        clickspan(e) {
+            event.preventDefault()
+            e.target.parentElement.parentElement.classList.toggle('sub-menu-active')
+        }
+    }
+}
+</script>

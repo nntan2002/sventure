@@ -3,9 +3,9 @@
         <div class="top-footer">
             <div class="container">
                 <b-row>
-                    <b-col md="4">
+                    <b-col md="5">
                         <div class="logo-footer">
-                            <img src="~/assets/images/logo-footer.png" alt="">
+                            <img src="~/assets/images/logo-footer-2.png" alt="">
                         </div>
                         <div class="content-footer">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet a alias possimus totam
@@ -15,7 +15,7 @@
                             rerum consequatur autem.
                         </div>
                     </b-col>
-                    <b-col md="8">
+                    <b-col md="7">
                         <b-row>
                             <b-col sm="4">
                                 <div class="footer-widget">

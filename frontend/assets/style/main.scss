@@ -80,7 +80,7 @@ header {
                         width: 100%;
 
                         li {
-                            background-color: rgba($primary-color, 0.5);
+                            background-color: rgba($primary-color, 1);
                             padding: 10px 20px;
                             overflow: hidden;
                             transition: all .3s ease-in-out;
@@ -101,7 +101,7 @@ header {
                                 left: 0%;
                                 opacity: 0;
                                 transition: all .3s ease-in-out;
-                                background-color: rgba($primary-color, 0.5);
+                                background-color: rgba($primary-color, 5);
                                 z-index: -1;
 
 
@@ -111,7 +111,6 @@ header {
                             }
 
                             &:hover {
-                                background-color: rgba($primary-color, 1);
                                 overflow: visible;
 
                                 &>a {
@@ -123,10 +122,10 @@ header {
                                     left: 100%;
 
                                     li {
-                                        background-color: rgba($primary-color, 0);
+                                        background-color: rgba(#000, 0);
 
                                         &:hover {
-                                            background-color: rgba($primary-color, 1);
+                                            background-color: rgba(#000, 1);
                                         }
                                     }
                                 }
@@ -408,19 +407,29 @@ header {
 }
 
 footer {
+    color: #000;
+
 
     .top-footer {
-        background-color: rgba($primary-color, 0.5);
+        background-color: rgba($primary-color, 0.3);
+        padding: 60px 0 40px 0;
 
         .logo-footer {
             img {
                 width: 200px;
             }
+
+            margin-bottom: 20px;
         }
 
-        ul{
+        ul {
             list-style: none;
             padding-left: 0;
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
         }
     }
 

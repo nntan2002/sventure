@@ -1,8 +1,8 @@
 <template>
     <div class="page-wrap">
-        <Header-item />
+        <Header />
         <nuxt />
-        <Footer-item />
+        <Footer />
     </div>
 </template>
     

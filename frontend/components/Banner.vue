@@ -1,13 +1,20 @@
 <template>
-    <section class="banner">
-        <swiper ref="bannerSwiper" :options="swiperOptions">
-            <swiper-slide>
-                <div class="banner-item">
-                    <img src="~/assets/images/logo-footer.png" alt="item.attributes.alternativeText" autoplay muted />
-                </div>
-            </swiper-slide>
-        </swiper>
-        <div class="swiper-pagination bannerslide-pagination" slot="pagination"></div>
+    <section>
+        <div class="banner">
+            <swiper ref="bannerSwiper" :options="swiperOptions">
+                <swiper-slide>
+                    <div class="banner-item">
+                        <img src="~/assets/images/banner1.jpg" alt="item.attributes.alternativeText" autoplay muted />
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="banner-item">
+                        <img src="~/assets/images/banner2.jpg" alt="item.attributes.alternativeText" autoplay muted />
+                    </div>
+                </swiper-slide>
+            </swiper>
+            <div slot="pagination" class="swiper-pagination bannerslide-pagination" ></div>
+        </div>
     </section>
 </template>
 
@@ -44,7 +51,6 @@ export default {
                 slidesPerView: 1,
                 autoHeight: true,
                 pauseOnMouseEnter: true,
-
                 pagination: {
                     el: ".bannerslide-pagination",
                     type: "bullets",

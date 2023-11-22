@@ -2,6 +2,7 @@
   <div class="main">
     <Banner />
     <Partners :about="about2" />
+    <home-page-Services />
   </div>
 </template>
 

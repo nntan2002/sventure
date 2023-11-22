@@ -6,6 +6,10 @@ $dark-color: #000000;
     margin-top: 70px;
 }
 
+div {
+    position: relative;
+}
+
 header {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -418,62 +422,170 @@ header {
     }
 }
 
-.banner {
-    position: relative;
-    height: calc(100vh - 70px);
+.section-padding {
+    padding: 60px 0;
+}
 
-    .banner-item {
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: #000;
-        display: flex;
-        align-items: center;
+section {
+    a {
+        text-decoration: none !important;
+    }
 
-        img {
+    .banner {
+        position: relative;
+        height: 70dvh;
+
+        .banner-item {
             width: 100%;
-            object-fit: cover;
-            object-position: center;
+            height: 70dvh;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            video {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+            }
         }
 
-        video {
-            width: 100%;
-            aspect-ratio: 16 / 9;
+        .bannerslide-pagination {
+            bottom: 15px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%) !important;
+
+            .swiper-pagination-bullet-active {
+                background: $primary-color;
+            }
+        }
+
+        @media (max-width: 992px) {
+            height: 70vh;
+
+            .banner-item {
+                height: 70vh;
+            }
+
+            .social-icon {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            height: 50vh;
+            min-height: 400px;
+
+            .banner-item {
+                height: 50vh;
+                min-height: 400px;
+            }
         }
     }
 
-    .bannerslide-pagination {
-        bottom: 15px;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%) !important;
+    .box-services {
+        width: 100%;
+        height: 100%;
+        background-color: rgba($primary-color, .4);
+        padding: 15px;
+        transition: all .3s linear;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .img-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                height: auto;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all .5s ease-in-out;
+            }
+
+            img:last-child {
+                opacity: 0;
+            }
+        }
+
+        .content-box {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #000;
+                flex-grow: 1;
+            }
+
+            p {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                /* number of lines to show */
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                color: #000;
+            }
+        }
+
+        &:hover {
+            background-color: rgba($primary-color, 1);
+
+            .img-box {
+                img:first-child {
+                    opacity: 0;
+                }
+
+                img:last-child {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .title-section {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .swiper-slide {
+        height: 100% !important;
+    }
+
+    .service {}
+
+
+    .swiper-pagination {
+        width: 100%;
 
         .swiper-pagination-bullet-active {
             background: $primary-color;
         }
-    }
 
-    @media (max-width: 992px) {
-        height: 70vh;
-
-        .banner-item {
-            height: 70vh;
-        }
-
-        .social-icon {
-            top: 50%;
-            transform: translateY(-50%);
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
         }
     }
 
-    @media (max-width: 767px) {
-        height: 50vh;
-        min-height: 400px;
-
-        .banner-item {
-            height: 50vh;
-            min-height: 400px;
-        }
-    }
 }
 
 footer {

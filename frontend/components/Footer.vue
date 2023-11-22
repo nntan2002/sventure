@@ -5,7 +5,7 @@
                 <b-row>
                     <b-col md="5">
                         <div class="logo-footer">
-                            <img src="~/assets/images/logo-footer-2.png" alt="">
+                            <img src="~/assets/images/logo-sventure-01.png" alt="">
                         </div>
                         <div class="content-footer">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet a alias possimus totam

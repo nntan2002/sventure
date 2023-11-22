@@ -1,5 +1,5 @@
 <template>
-    <div class="banner">
+    <section class="banner">
         <swiper ref="bannerSwiper" :options="swiperOptions">
             <swiper-slide>
                 <div class="banner-item">
@@ -8,7 +8,7 @@
             </swiper-slide>
         </swiper>
         <div class="swiper-pagination bannerslide-pagination" slot="pagination"></div>
-    </div>
+    </section>
 </template>
 
 <script>

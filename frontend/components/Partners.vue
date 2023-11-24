@@ -1,21 +1,34 @@
 <template>
-    <section v-if="about" class="mb-5">
-        <b-container class="position-relative">
-            <div class="about-info text-center">
-                <h2 class="title mb-4">
-                    {{ about.title || '' }}
-                </h2>
-                <div class="mb-4" v-html="about.subTitle || ''"></div>
-            </div>
-
-            <swiper class="swiper123" v-if="about.items && about.items.length" :options="swiperOptions">
-                <swiper-slide v-for="item in about.items" :key="item.index">
-                    <div class="box-img">
-                        <b-img :src="baseURL + item.image.data.attributes.url" class="w-100"></b-img>
-                    </div>
-                </swiper-slide>
-            </swiper>
-        </b-container>
+    <section class="section-padding">
+        <div class="partners">
+            <b-container class="position-relative">
+                <b-row>
+                    <b-col md="12">
+                        <div class="about-info text-center">
+                            <h2 class="title-section mb-4">
+                                Our partner
+                            </h2>
+                            <div class="mb-4">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius iste adipisci dignissimos
+                                    natus, libero, assumenda labore eaque corporis temporibus facilis rem explicabo dicta
+                                    pariatur, necessitatibus aspernatur aliquid animi cupiditate molestiae.
+                                </p>
+                            </div>
+                        </div>
+                    </b-col>
+                    <b-col md="12">
+                        <swiper class="swiper123" v-if="about && about.length" :options="swiperOptions">
+                            <swiper-slide v-for="item in about" :key="item.index">
+                                <div class="box-img">
+                                    <b-img :src="item.image" class="w-100"></b-img>
+                                </div>
+                            </swiper-slide>
+                        </swiper>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </div>
     </section>
 </template>
 <script>
@@ -28,7 +41,7 @@ export default {
     },
     props: {
         about: {
-            type: Object,
+            type: Array,
             default: () => null,
         },
     },
@@ -65,6 +78,9 @@ export default {
             },
         }
     },
+
+    mounted() {
+    }
 }
 </script>
   

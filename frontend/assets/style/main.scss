@@ -669,6 +669,33 @@ section {
             }
         }
     }
+
+    .features {
+        margin-bottom: 60px;
+        background-color: rgb($primary-color, 0.3);
+
+        .box-features {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            height: 100%;
+            text-align: center;
+
+            .box-icon {
+                margin-right: 20px;
+
+                img {
+                    width: 60px;
+                }
+            }
+
+            .box-title {
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+    }
 }
 
 footer {

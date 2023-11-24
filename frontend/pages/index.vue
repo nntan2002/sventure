@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <Banner />
+    <Features />
     <About-us />
     <home-page-Services class="pb-0" />
     <Partners :about="about2" />

@@ -142,7 +142,7 @@
                     </div>
                     <div class="user d-lg-flex d-none">
                         <div class="user-item">
-                            <a href="#" class="btn-main login">
+                            <a href="#" class="login">
                                 <i class="fas fa-user"></i>
                                 <span>
                                     Log In
@@ -150,7 +150,7 @@
                             </a>
                         </div>
                         <div class="user-item">
-                            <a href="#" class="btn-main signup">
+                            <a href="#" class="signup">
                                 <i class="fas fa-user-plus"></i>
                                 <span>
                                     Sign Up
@@ -253,7 +253,7 @@
 
                 <div class="user">
                     <div class="user-item">
-                        <a href="#" class="btn-main login">
+                        <a href="#" class="login">
                             <i class="fas fa-user"></i>
                             <span>
                                 Log In
@@ -261,7 +261,7 @@
                         </a>
                     </div>
                     <div class="user-item">
-                        <a href="#" class="btn-main signup">
+                        <a href="#" class="signup">
                             <i class="fas fa-user-plus"></i>
                             <span>
                                 Sign Up

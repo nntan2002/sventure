@@ -8,7 +8,7 @@
                             <h2 class="title-section mb-4">
                                 Our partner
                             </h2>
-                            <div class="mb-4">
+                            <div class="mb-5">
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius iste adipisci dignissimos
                                     natus, libero, assumenda labore eaque corporis temporibus facilis rem explicabo dicta

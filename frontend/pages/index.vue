@@ -1,9 +1,9 @@
 <template>
   <div class="main">
     <Banner />
-    <home-page-Services />
+    <About-us />
+    <home-page-Services class="pb-0" />
     <Partners :about="about2" />
-    
   </div>
 </template>
 

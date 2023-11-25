@@ -262,7 +262,6 @@ header {
                 .login {
                     transition: all .5s ease-in-out;
                     border-radius: 5px;
-                    background-color: unset !important;
 
                     &:hover {
                         background-color: $second-color;

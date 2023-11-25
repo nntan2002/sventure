@@ -5,6 +5,8 @@
     <About-us />
     <home-page-Services class="pb-0" />
     <Partners :about="about2" />
+    <home-page-Building />
+    <home-page-Contact />
   </div>
 </template>
 

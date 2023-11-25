@@ -51,7 +51,11 @@
                             </nuxt-link>
                         </swiper-slide>
                     </swiper>
-                    <div slot="pagination" class="swiper-pagination productslide-pagination2 text-center mt-2">
+                    <div class="swiper-button swiper-button-prev swiper-button-prev1" slot="button-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="swiper-button swiper-button-next swiper-button-next1" slot="button-next">
+                        <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
             </div>
@@ -97,16 +101,11 @@ export default {
                         slidesPerView: 3,
                     },
                 },
-                pagination: {
-                    el: ".productslide-pagination2",
-                    type: "bullets",
-                    clickable: true,
+                navigation: {
+                    nextEl: '.swiper-button-next1',
+                    prevEl: '.swiper-button-prev1',
+                    disabledClass: 'my-button-disabled',
                 },
-                // autoplay: {
-                //     delay: 10000,
-                //     disableOnInteraction: false,
-                // },
-
             },
         }
     },

@@ -30,6 +30,7 @@
                         <a href="#" class="btn-main">
                             <span>
                                 Read more
+                                <i class="fas fa-arrow-right"></i>
                             </span>
                         </a>
                     </b-col>

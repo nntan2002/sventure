@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="contact-home">
-            <div class="container">
+            <b-container>
                 <div class="content-section">
                     <div class="content-item">
                         <div class="title-section">
@@ -22,7 +22,7 @@
                         </span>
                     </a>
                 </div>
-            </div>
+            </b-container>
         </div>
     </section>
 </template>

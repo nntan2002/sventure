@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_posts",
+  "info": {
+    "singularName": "news-post",
+    "pluralName": "news-posts",
+    "displayName": "News Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "BannerDetail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "news_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-category.news-category"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

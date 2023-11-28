@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,16 +16,20 @@
     }
   },
   "attributes": {
-    "ImageBanner": {
-      "displayName": "Banner",
-      "type": "component",
-      "repeatable": true,
+    "Banner": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "banner.banner"
+      }
     }
   }
 }

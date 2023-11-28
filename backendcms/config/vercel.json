@@ -1,0 +1,20 @@
+{
+    "build": {
+      "target": "serverless"
+    },
+    "environment": {
+      "NODE_ENV": "production"
+    },
+    "headers": [
+      {
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/admin"
+      }
+    ]
+  }

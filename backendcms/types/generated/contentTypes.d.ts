@@ -823,8 +823,20 @@ export interface ApiNewsCategoryNewsCategory extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.Unique;
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Slug: Attribute.UID<'api::news-category.news-category', 'Title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -841,6 +853,12 @@ export interface ApiNewsCategoryNewsCategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::news-category.news-category',
+      'oneToMany',
+      'api::news-category.news-category'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -855,11 +873,30 @@ export interface ApiNewsPostNewsPost extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String;
-    Slug: Attribute.UID<'api::news-post.news-post', 'Title'>;
-    Thumbnail: Attribute.Media;
-    BannerDetail: Attribute.Media;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Thumbnail: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    BannerDetail: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Content: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -872,7 +909,13 @@ export interface ApiNewsPostNewsPost extends Schema.CollectionType {
       'oneToMany',
       'api::news-category.news-category'
     >;
-    Description: Attribute.Text;
+    Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slug: Attribute.UID<'api::news-post.news-post', 'Title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -888,6 +931,12 @@ export interface ApiNewsPostNewsPost extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::news-post.news-post',
+      'oneToMany',
+      'api::news-post.news-post'
+    >;
+    locale: Attribute.String;
   };
 }
 

@@ -14,9 +14,9 @@
                             </div>
                         </b-col>
                     </b-row>
-                    <b-row class="justify-content-center">
+                    <b-row>
                         <b-col v-for="item in 6" :key="item" md="4" class="mb-4">
-                            <nuxt-link to="/dich-vu/abc">
+                            <nuxt-link to="/dich-vu/abc/abc">
                                 <div class="box-services">
                                     <div class="img-box">
                                         <b-img src="~/assets/images/services1.jpg"></b-img>
@@ -24,7 +24,7 @@
                                     </div>
                                     <div class="content-box">
                                         <h4 class="title my-4">
-                                           Service 1
+                                            Service {{ item }}
                                         </h4>
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit eos quae,

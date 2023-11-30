@@ -15,7 +15,7 @@
                         </b-col>
                     </b-row>
                     <b-row class="justify-content-center">
-                        <b-col v-for="item in 2" :key="item" md="5">
+                        <b-col v-for="item in 2" :key="item" md="4">
                             <nuxt-link to="/dich-vu/abc">
                                 <div class="box-services">
                                     <div class="img-box">
@@ -25,6 +25,26 @@
                                     <div class="content-box">
                                         <h4 class="title my-4">
                                             {{ item === 2 ? 'Office Services' : 'Business Services' }}
+                                        </h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit eos quae,
+                                            nesciunt beatae fuga a necessitatibus eius vitae culpa molestiae iusto atque
+                                            est, illum labore, dolor magnam et id.
+                                        </p>
+                                    </div>
+                                </div>
+                            </nuxt-link>
+                        </b-col>
+                        <b-col md="4">
+                            <nuxt-link to="/dich-vu/abc">
+                                <div class="box-services">
+                                    <div class="img-box">
+                                        <b-img src="~/assets/images/services1.jpg"></b-img>
+                                        <b-img src="~/assets/images/services2.jpg"></b-img>
+                                    </div>
+                                    <div class="content-box">
+                                        <h4 class="title my-4">
+                                            Elearning Sventure
                                         </h4>
                                         <p>
                                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit eos quae,

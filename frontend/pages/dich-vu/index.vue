@@ -36,7 +36,7 @@
                             </nuxt-link>
                         </b-col>
                         <b-col md="4">
-                            <nuxt-link to="/dich-vu/abc">
+                            <a href="https://sventure.cls.vn" target="_blank">
                                 <div class="box-services">
                                     <div class="img-box">
                                         <b-img src="~/assets/images/services1.jpg"></b-img>
@@ -53,7 +53,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </nuxt-link>
+                            </a>
                         </b-col>
                     </b-row>
                 </div>

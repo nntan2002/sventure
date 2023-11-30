@@ -51,10 +51,10 @@
                             </nuxt-link>
                         </swiper-slide>
                     </swiper>
-                    <div class="swiper-button swiper-button-prev swiper-button-prev1" slot="button-prev">
+                    <div slot="button-prev" class="swiper-button swiper-button-prev swiper-button-prev1">
                         <i class="fas fa-chevron-left"></i>
                     </div>
-                    <div class="swiper-button swiper-button-next swiper-button-next1" slot="button-next">
+                    <div slot="button-next" class="swiper-button swiper-button-next swiper-button-next1">
                         <i class="fas fa-chevron-right"></i>
                     </div>
                 </div>
@@ -67,19 +67,22 @@ import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 // import swiper module styles
 import 'swiper/css/swiper.css'
 export default {
+    components: {
+        Swiper,
+        SwiperSlide
+    },
+
+    directives: {
+        swiper: directive
+    },
+
     props: {
         info: {
             type: Object,
             default: () => { },
         },
     },
-    components: {
-        Swiper,
-        SwiperSlide
-    },
-    directives: {
-        swiper: directive
-    },
+
     data() {
         return {
             baseURL: this.$axios.defaults.baseURL,

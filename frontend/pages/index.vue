@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <Banner />
+    <home-page-Banner />
     <Features />
     <About-us />
     <home-page-Services />

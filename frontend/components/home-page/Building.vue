@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="building section-padding" style="background-image: url('assets/images/bg-building.jpg');">
+        <div class="building section-padding" style="background-image: url('/assets/images/bg-building.jpg');">
             <div class="container">
                 <div class="content-section">
                     <div class="content-item">

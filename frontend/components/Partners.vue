@@ -18,7 +18,7 @@
                         </div>
                     </b-col>
                     <b-col md="12">
-                        <swiper class="swiper123" v-if="about && about.length" :options="swiperOptions">
+                        <swiper v-if="about && about.length" :options="swiperOptions" class="swiper123">
                             <swiper-slide v-for="item in about" :key="item.index">
                                 <div class="box-img">
                                     <b-img :src="item.image" class="w-100"></b-img>

@@ -36,8 +36,7 @@
                                     <b-row>
                                         <b-col cols="4">
                                             <div class="img-box h-100">
-                                                <img src="~/assets/images/news1.jpg" alt=""
-                                                    style="height: 100%; aspect-ratio: unset;">
+                                                <img src="~/assets/images/news1.jpg" alt="" style="height: 100%; aspect-ratio: unset;">
                                             </div>
                                         </b-col>
                                         <b-col>
@@ -64,7 +63,7 @@
                     </b-row>
                 </div>
                 <div class="text-center mt-3 mt-md-5">
-                    <a href="#" class="btn-main">
+                    <a href="/tin-tuc" class="btn-main">
                         <span>
                             Read more
                             <i class="fas fa-arrow-right"></i>

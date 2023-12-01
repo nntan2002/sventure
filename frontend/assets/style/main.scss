@@ -688,8 +688,9 @@ section {
         }
     }
 
-
     .partners {
+        background-color: $third-color;
+        color: #fff;
 
         .swiper-wrapper {
             align-items: center;
@@ -921,6 +922,22 @@ section {
                 img {
                     transform: scale(1.1);
                 }
+            }
+        }
+    }
+
+    .share-media {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgb(115, 115, 115, .5);
+        padding-bottom: 30px;
+
+        .share-icon {
+            img {
+                width: 25px;
+                height: 25px;
+                border-radius: 5px;
             }
         }
     }

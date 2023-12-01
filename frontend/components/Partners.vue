@@ -1,6 +1,6 @@
 <template>
-    <section class="section-padding">
-        <div class="partners">
+    <section>
+        <div class="partners section-padding">
             <b-container class="position-relative">
                 <b-row>
                     <b-col md="12">

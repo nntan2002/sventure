@@ -11,7 +11,7 @@
                 <div class="content-section">
                     <swiper ref="productSwiper" :options="swiperOptions2">
                         <swiper-slide>
-                            <nuxt-link to="">
+                            <nuxt-link to="/dich-vu/chuyen-muc/noi-dung-mau">
                                 <div class="box-services">
                                     <div class="img-box">
                                         <b-img src="~/assets/images/services1.jpg"></b-img>
@@ -31,7 +31,7 @@
                             </nuxt-link>
                         </swiper-slide>
                         <swiper-slide v-for="item in 10" :key="item">
-                            <nuxt-link to="">
+                            <nuxt-link to="/dich-vu/chuyen-muc/noi-dung-mau">
                                 <div class="box-services">
                                     <div class="img-box">
                                         <b-img src="~/assets/images/services1.jpg"></b-img>

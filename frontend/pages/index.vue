@@ -4,9 +4,9 @@
     <Features />
     <About-us />
     <home-page-Services />
+    <Partners :about="about2" />
     <News />
     <home-page-Building />
-    <Partners :about="about2" />
     <home-page-Contact />
   </div>
 </template>

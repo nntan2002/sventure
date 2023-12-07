@@ -328,6 +328,9 @@ export default {
             active_siderbar: false
         }
     },
+    mounted() {
+        console.log(this.$i18n.locale);
+    },
     methods: {
         clickspan(e) {
             event.preventDefault()

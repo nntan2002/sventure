@@ -39,6 +39,20 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: [
+          { code: 'en', iso: 'en-US', file: 'en.json' },
+          { code: 'vi', iso: 'vi-VN', file: 'vi.json' },
+        ],
+        langDir: '~/locales/',
+        defaultLocale: 'vi',
+        vueI18n: {
+          fallbackLocale: 'vi',
+        }
+      }
+    ],
     '@nuxt/image'
   ],
 

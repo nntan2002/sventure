@@ -7,3 +7,4 @@ module.exports = (config, webpack) => {
   // Important: return the modified config
   return config;
 };
+ 

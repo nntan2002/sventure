@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_about_us_aboutuses",
+  "info": {
+    "displayName": "AboutUs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TitleSection": {
+      "type": "string"
+    },
+    "TitleContent": {
+      "type": "string"
+    },
+    "SubTitleContent": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

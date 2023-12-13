@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_partners",
+  "info": {
+    "singularName": "our-partner",
+    "pluralName": "our-partners",
+    "displayName": "OurPartner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TitleSection": {
+      "type": "string"
+    },
+    "DescriptionSection": {
+      "type": "text"
+    },
+    "Images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

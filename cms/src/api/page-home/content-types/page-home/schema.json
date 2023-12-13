@@ -15,5 +15,32 @@
       "localized": true
     }
   },
-  "attributes": {}
+  "attributes": {
+    "Banners": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Features": {
+      "displayName": "Feature",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "feature.feature"
+    }
+  }
 }

@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "~/plugins/api.js", ssr: true },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,10 +60,25 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: process.env.API_URL || 'https://cms.svcom.vn',
+    // baseURL: process.env.API_URL || 'http://localhost:3021',
+    debug: process.env.DEBUG || false,
+    proxyHeaders: false,
+    credentials: false,
+    headers: {
+      'Content-type': 'application/json'
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
 }

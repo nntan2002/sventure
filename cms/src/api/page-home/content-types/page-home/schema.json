@@ -17,14 +17,15 @@
   },
   "attributes": {
     "Banners": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -41,6 +42,26 @@
         }
       },
       "component": "feature.feature"
+    },
+    "AboutUs": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about-us.about-us"
+    },
+    "category_services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category-service.category-service"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
     }
   }
 }

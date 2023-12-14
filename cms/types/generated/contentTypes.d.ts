@@ -908,6 +908,22 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
           localized: true;
         };
       }>;
+    AboutUs: Attribute.Component<'about-us.about-us', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    category_services: Attribute.Relation<
+      'api::page-home.page-home',
+      'oneToMany',
+      'api::category-service.category-service'
+    >;
+    posts: Attribute.Relation<
+      'api::page-home.page-home',
+      'oneToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -927,6 +943,68 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       'api::page-home.page-home',
       'oneToMany',
       'api::page-home.page-home'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPostPost extends Schema.CollectionType {
+  collectionName: 'posts';
+  info: {
+    singularName: 'post';
+    pluralName: 'posts';
+    displayName: 'Post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slug: Attribute.UID<'api::post.post', 'Title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Thumbnail: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::post.post',
+      'oneToMany',
+      'api::post.post'
     >;
     locale: Attribute.String;
   };
@@ -998,6 +1076,71 @@ export interface ApiSectionBuildingSectionBuilding extends Schema.SingleType {
       'api::section-building.section-building',
       'oneToMany',
       'api::section-building.section-building'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiSectionContactSectionContact extends Schema.SingleType {
+  collectionName: 'section_contacts';
+  info: {
+    singularName: 'section-contact';
+    pluralName: 'section-contacts';
+    displayName: 'SectionContact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    TitleSection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DescriptionSection: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SlugButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-contact.section-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-contact.section-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::section-contact.section-contact',
+      'oneToMany',
+      'api::section-contact.section-contact'
     >;
     locale: Attribute.String;
   };
@@ -1101,7 +1244,9 @@ declare module '@strapi/types' {
       'api::category-service.category-service': ApiCategoryServiceCategoryService;
       'api::our-partner.our-partner': ApiOurPartnerOurPartner;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::post.post': ApiPostPost;
       'api::section-building.section-building': ApiSectionBuildingSectionBuilding;
+      'api::section-contact.section-contact': ApiSectionContactSectionContact;
       'api::service.service': ApiServiceService;
     }
   }

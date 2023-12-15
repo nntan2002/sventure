@@ -2,14 +2,9 @@
     <section>
         <div class="banner">
             <swiper ref="bannerSwiper" :options="swiperOptions">
-                <swiper-slide>
+                <swiper-slide v-for="(item, index) in banner" :key="index">
                     <div class="banner-item">
-                        <img src="~/assets/images/banner1.jpg" alt="item.attributes.alternativeText" autoplay muted />
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="banner-item">
-                        <img src="~/assets/images/banner2.jpg" alt="item.attributes.alternativeText" autoplay muted />
+                        <img :src="baseURL + item.attributes.url" :alt="item.attributes.name" />
                     </div>
                 </swiper-slide>
             </swiper>

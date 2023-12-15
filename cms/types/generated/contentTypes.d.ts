@@ -908,12 +908,6 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
           localized: true;
         };
       }>;
-    AboutUs: Attribute.Component<'about-us.about-us', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     category_services: Attribute.Relation<
       'api::page-home.page-home',
       'oneToMany',
@@ -924,6 +918,12 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       'oneToMany',
       'api::post.post'
     >;
+    AboutUs: Attribute.Component<'about-us.about-us'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

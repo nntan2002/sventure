@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <home-page-Banner />
-    <Features />
+    <home-page-Banner :banner="banner" />
+    <home-page-Features :features="features" />
     <About-us />
     <home-page-Services />
     <Partners :about="about2" />
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+const qs = require('qs')
 export default {
   name: 'IndexPage',
   layout: 'default',
@@ -19,9 +20,10 @@ export default {
   data() {
     return {
       baseURL: this.$axios.defaults.baseURL,
+      locale: this.$i18n.locale || 'vi',
       banner: [],
+      features: [],
       about: null,
-      aboutInfo: {},
       about1: null,
       about2: [
         {
@@ -42,6 +44,47 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    const query = qs.stringify(
+      {
+        populate: {
+          Banners: true,
+          Features: {
+            populate: {
+              Image: true,
+            }
+          },
+          AboutUs: {
+            populate: {
+              Image: true,
+            }
+          }
+        },
+        sort: { publishedAt: 'desc' },
+        publicationState: 'live',
+        locale: this.$i18n.locale || 'vi',
+      },
+      {
+        encodeValuesOnly: true, // prettify url
+      }
+    )
+    this.getHomePage(query)
+  },
+  methods: {
+    getHomePage(params) {
+      this.$api
+        .getHomePage(params)
+        .then((data) => {
+          this.banner = data.data.attributes.Banners.data
+          this.features = data.data.attributes.Features
+          this.about = data.data.attributes.AboutUs
+          console.log(this.about)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
   },
 }
 </script>

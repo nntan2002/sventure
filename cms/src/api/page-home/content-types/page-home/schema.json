@@ -43,16 +43,6 @@
       },
       "component": "feature.feature"
     },
-    "AboutUs": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "about-us.about-us"
-    },
     "category_services": {
       "type": "relation",
       "relation": "oneToMany",
@@ -62,6 +52,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::post.post"
+    },
+    "AboutUs": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about-us.about-us"
     }
   }
 }

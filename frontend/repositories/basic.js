@@ -1,8 +1,13 @@
 const exercisePage = '/api/page-exercise';
+const home = '/api/page-home';
 
 export default ($axios) => ({
     getExercisePage(query) {
         return this.getData(exercisePage, query)
+    },
+
+    getHomePage(query) {
+        return this.getData(home, query)
     },
 
     // COMMON GET DATA

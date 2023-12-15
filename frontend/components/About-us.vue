@@ -3,29 +3,19 @@
         <div class="aboutus">
             <div class="container">
                 <div class="title-section">
-                    About Us
+                    {{ about.TitleSection }}
                 </div>
                 <b-row>
                     <b-col md="7">
                         <div class="title-aboutus">
                             <div class="sub-title">
-                                Sub-title Lorem ipsum dolor sit amet.
+                                {{ about.SubTitleContent }}
                             </div>
                             <div class="title">
-                                Title Lorem ipsum dolor sit amet.
+                                {{ about.TitleContent }}
                             </div>
                         </div>
-                        <div class="content-aboutus mb-4">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odio earum cumque tempora
-                            porro. Nemo
-                            ullam, aspernatur maxime voluptate quos eum eaque. Doloremque, cum. Nam dignissimos ducimus
-                            natus
-                            deleniti rerum.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur odio earum cumque tempora
-                            porro. Nemo
-                            ullam, aspernatur maxime voluptate quos eum eaque. Doloremque, cum. Nam dignissimos ducimus
-                            natus
-                            deleniti rerum.
+                        <div class="content-aboutus mb-4" v-html="about.Content">
                         </div>
                         <a href="#" class="btn-main">
                             <span>
@@ -44,3 +34,23 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        about: {
+            type: Object,
+            default: () => null,
+        },
+    },
+    data() {
+        return {
+            baseURL: this.$axios.defaults.baseURL,
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+}
+</script>

@@ -2,7 +2,7 @@
   <div class="main">
     <home-page-Banner :banner="banner" />
     <home-page-Features :features="features" />
-    <About-us />
+    <About-us v-if="about" :about="about"/>
     <home-page-Services />
     <Partners :about="about2" />
     <News />

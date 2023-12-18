@@ -28,6 +28,12 @@
         "videos",
         "audios"
       ]
+    },
+    "TitleButton": {
+      "type": "string"
+    },
+    "SlugButton": {
+      "type": "string"
     }
   }
 }

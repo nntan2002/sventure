@@ -6,8 +6,6 @@
     <home-page-Services v-if="category_services" :category_services="category_services" />
     <Partners v-if="about2" :partners="about2" />
     <News />
-    <home-page-Building v-if="building" :building="building" />
-    <item-Contact v-if="contact" :contact="contact" />
   </div>
 </template>
 
@@ -25,8 +23,6 @@ export default {
       features: [],
       about: null,
       about2: null,
-      building: null,
-      contact: null,
       category_services: null,
     }
   },
@@ -75,36 +71,9 @@ export default {
       }
     )
 
-    const query2 = qs.stringify(
-      {
-        populate: {
-          BackgroundSection: true,
-        },
-        sort: { publishedAt: 'desc' },
-        publicationState: 'live',
-        locale: this.$i18n.locale || 'vi',
-      },
-      {
-        encodeValuesOnly: true, // prettify url
-      }
-    )
-
-    const query3 = qs.stringify(
-      {
-        populate: '*',
-        sort: { publishedAt: 'desc' },
-        publicationState: 'live',
-        locale: this.$i18n.locale || 'vi',
-      },
-      {
-        encodeValuesOnly: true, // prettify url
-      }
-    )
-
     this.getHomePage(query)
     this.getSectionPartners(query1)
-    this.getSectionBuilding(query2)
-    this.getSectionContact(query3)
+
   },
   methods: {
     getHomePage(params) {
@@ -126,26 +95,6 @@ export default {
         .getSectionPartners(params)
         .then((data) => {
           this.about2 = data.data.attributes || []
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
-    getSectionBuilding(params) {
-      this.$api
-        .getSectionBuilding(params)
-        .then((data) => {
-          this.building = data.data.attributes || []
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
-    getSectionContact(params) {
-      this.$api
-        .getSectionContact(params)
-        .then((data) => {
-          this.contact = data.data.attributes || []
         })
         .catch((error) => {
           console.log(error)

@@ -59,8 +59,8 @@
                 </div>
             </b-container>
         </section>
-        <home-page-Building />
-        <home-page-Contact />
+        <home-page-Building v-if="building" :building="building" />
+        <item-Contact v-if="contact" :contact="contact" />
     </div>
 </template>
   

@@ -62,6 +62,22 @@
         }
       },
       "component": "about-us.about-us"
+    },
+    "TitleService": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "TitlePost": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

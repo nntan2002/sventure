@@ -4,47 +4,25 @@
             <div class="service">
                 <b-row class="justify-content-center text-center">
                     <b-col md="8">
-                        <h2 class="title-section mb-4">Services</h2>
+                        <h2 class="title-section mb-4">DỊCH VỤ</h2>
                         <div class="mb-4"></div>
                     </b-col>
                 </b-row>
                 <div class="content-section">
                     <swiper ref="productSwiper" :options="swiperOptions2">
-                        <swiper-slide>
-                            <nuxt-link to="/dich-vu/chuyen-muc/noi-dung-mau">
+                        <swiper-slide v-for="item in category_services" :key="item.attributes.Title">
+                            <nuxt-link :to="'/dich-vu/' + item.attributes.Slug">
                                 <div class="box-services">
                                     <div class="img-box">
-                                        <b-img src="~/assets/images/services1.jpg"></b-img>
-                                        <b-img src="~/assets/images/services2.jpg"></b-img>
+                                        <b-img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"></b-img>
+                                        <b-img :src="baseURL + item.attributes.HoverThumbnail.data.attributes.url"></b-img>
                                     </div>
                                     <div class="content-box">
                                         <h4 class="title my-4">
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                            {{ item.attributes.Title }}
                                         </h4>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit eos quae,
-                                            nesciunt beatae fuga a necessitatibus eius vitae culpa molestiae iusto atque
-                                            est, illum labore, dolor magnam et id.
-                                        </p>
-                                    </div>
-                                </div>
-                            </nuxt-link>
-                        </swiper-slide>
-                        <swiper-slide v-for="item in 10" :key="item">
-                            <nuxt-link to="/dich-vu/chuyen-muc/noi-dung-mau">
-                                <div class="box-services">
-                                    <div class="img-box">
-                                        <b-img src="~/assets/images/services1.jpg"></b-img>
-                                        <b-img src="~/assets/images/services2.jpg"></b-img>
-                                    </div>
-                                    <div class="content-box">
-                                        <h4 class="title my-4">
-                                            Service {{ item }}
-                                        </h4>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic suscipit eos quae,
-                                            nesciunt beatae fuga a necessitatibus eius vitae culpa molestiae iusto atque
-                                            est, illum labore, dolor magnam et id.
+                                            {{ item.attributes.Description }}
                                         </p>
                                     </div>
                                 </div>
@@ -77,9 +55,9 @@ export default {
     },
 
     props: {
-        info: {
-            type: Object,
-            default: () => { },
+        category_services: {
+            type: Array,
+            default: () => null,
         },
     },
 
@@ -114,27 +92,6 @@ export default {
     },
 
     methods: {
-        getFeatureImage(cate) {
-            let imageUrl = ''
-            try {
-                imageUrl = cate.attributes.featureProductImage.data.attributes.url
-            } catch (error) {
-                imageUrl = ''
-            }
-
-            return this.baseURL + imageUrl
-        },
-
-        getCateImage(cate) {
-            let imageUrl = ''
-            try {
-                imageUrl = cate.attributes.image.data.attributes.url
-            } catch (error) {
-                imageUrl = ''
-            }
-
-            return this.baseURL + imageUrl
-        },
     },
 }
 </script>

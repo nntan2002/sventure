@@ -5,19 +5,15 @@
                 <div class="content-section">
                     <div class="content-item">
                         <div class="title-section">
-                            Contact Now
+                            {{ contact.TitleSection }}
                         </div>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus veritatis cum animi
-                            reiciendis. At
-                            suscipit, nobis quisquam dicta molestiae deserunt quas nisi, beatae quis itaque corporis, vel
-                            earum
-                            impedit sint?
+                            {{ contact.DescriptionSection }}
                         </p>
                     </div>
-                    <a href="#" class="btn-main">
+                    <a :href="contact.SlugButton" class="btn-main">
                         <span>
-                            Contact
+                            {{ contact.TitleButton }}
                             <i class="fas fa-arrow-right"></i>
                         </span>
                     </a>
@@ -26,3 +22,23 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    props: {
+        contact: {
+            type: Object,
+            default: () => null,
+        },
+    },
+    data() {
+        return {
+            baseURL: this.$axios.defaults.baseURL,
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+}
+</script>

@@ -853,14 +853,35 @@ export interface ApiOurPartnerOurPartner extends Schema.SingleType {
     singularName: 'our-partner';
     pluralName: 'our-partners';
     displayName: 'OurPartner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    TitleSection: Attribute.String;
-    DescriptionSection: Attribute.Text;
-    Images: Attribute.Media;
+    TitleSection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DescriptionSection: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Images: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -876,6 +897,12 @@ export interface ApiOurPartnerOurPartner extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::our-partner.our-partner',
+      'oneToMany',
+      'api::our-partner.our-partner'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -919,6 +946,18 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       'api::post.post'
     >;
     AboutUs: Attribute.Component<'about-us.about-us'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleService: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitlePost: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

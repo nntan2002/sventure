@@ -15,18 +15,18 @@
                                 {{ about.TitleContent }}
                             </div>
                         </div>
-                        <div class="content-aboutus mb-4" v-html="about.Content">
+                        <div class="content-aboutus mb-4" v-html="about.Content" >
                         </div>
-                        <a href="#" class="btn-main">
+                        <a :href="about.SlugButton" class="btn-main">
                             <span>
-                                Read more
+                                {{ about.TitleButton }}
                                 <i class="fas fa-arrow-right"></i>
                             </span>
                         </a>
                     </b-col>
                     <b-col md="5">
                         <div class="image-aboutus">
-                            <img src="~/assets/images/home-01-hero-image.webp" alt="">
+                            <img :src="baseURL + about.Image.data.attributes.url" alt="">
                         </div>
                     </b-col>
                 </b-row>

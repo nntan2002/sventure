@@ -5,7 +5,7 @@
     <About-us v-if="about" :about="about" />
     <home-page-Services v-if="category_services" :category_services="category_services" />
     <Partners v-if="about2" :partners="about2" />
-    <News />
+    <home-page-News v-if="posts" :posts="posts"/>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
       about: null,
       about2: null,
       category_services: null,
+      posts: null,
     }
   },
   mounted() {

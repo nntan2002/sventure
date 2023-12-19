@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "footers",
+  "collectionName": "headers",
   "info": {
-    "singularName": "footer",
-    "pluralName": "footers",
-    "displayName": "Footer",
-    "description": ""
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "Header"
   },
   "options": {
     "draftAndPublish": true
@@ -16,48 +15,44 @@
     }
   },
   "attributes": {
-    "LogoFooter": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "LogoHeader": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
+      "type": "media",
+      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "DescriptionFooter": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "MenuFooter": {
-      "displayName": "Menu footer",
-      "type": "component",
-      "repeatable": true,
-      "component": "menu-footer.menu-footer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "Copyright": {
+    "TitleSearch": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text"
+      "type": "string"
+    },
+    "Login": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "SignUp": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

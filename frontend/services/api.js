@@ -22,4 +22,8 @@ export default ($axios) => ({
     getSectionContact(query) {
         return this.basic.getSectionContact(query);
     },
+
+    getFooter(query) {
+        return this.basic.getFooter(query);
+    },
 });

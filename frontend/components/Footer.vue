@@ -1,54 +1,23 @@
 <template>
-    <footer>
-        <div class="top-footer">
+    <footer v-if="footer">
+        <div class="top-footer" >
             <div class="container">
                 <b-row>
                     <b-col md="5">
                         <div class="logo-footer">
-                            <img src="~/assets/images/logo-sventure-01.png" alt="">
+                            <img :src="baseURL + footer.LogoFooter.data.attributes.url" alt="">
                         </div>
                         <div class="content-footer">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet a alias possimus totam
-                            temporibus
-                            laudantium amet, quisquam iste omnis nam officiis obcaecati adipisci error provident non
-                            repudiandae
-                            rerum consequatur autem.
+                            {{ footer.DescriptionFooter }}
                         </div>
                     </b-col>
                     <b-col md="7">
                         <b-row>
-                            <b-col sm="4">
+                            <b-col sm="4" v-for="item in footer.MenuFooter" :key="item.id">
                                 <div class="footer-widget">
-                                    <h4 class="footer-widget__title">About</h4>
-                                    <ul class="footer-widget__link">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="course-grid-left-sidebar.html">Courses</a></li>
-                                        <li><a href="instructors.html">Instructor</a></li>
-                                        <li><a href="event-grid-sidebar.html">Events</a></li>
-                                        <li><a href="become-an-instructor.html">Become A Teacher</a></li>
-                                    </ul>
-                                </div>
-                            </b-col>
-                            <b-col sm="4">
-                                <div class="footer-widget">
-                                    <h4 class="footer-widget__title">Links</h4>
-                                    <ul class="footer-widget__link">
-                                        <li><a href="blog-grid-left-sidebar.html">News &amp; Blogs</a></li>
-                                        <li><a href="#">Library</a></li>
-                                        <li><a href="#">Gallery</a></li>
-                                        <li><a href="#">Partners</a></li>
-                                        <li><a href="#">Career</a></li>
-                                    </ul>
-                                </div>
-                            </b-col>
-                            <b-col sm="4">
-                                <div class="footer-widget">
-                                    <h4 class="footer-widget__title">Support</h4>
-                                    <ul class="footer-widget__link">
-                                        <li><a href="#">Documentation</a></li>
-                                        <li><a href="faqs.html">FAQs</a></li>
-                                        <li><a href="#">Forum</a></li>
-                                        <li><a href="#">Sitemap</a></li>
+                                    <h4 class="footer-widget__title">{{ item.TitleMenu }}</h4>
+                                    <ul class="footer-widget__link" v-if="item.MenuItem">
+                                        <li  v-for="item1 in item.MenuItem" :key="item1.id"><a :href="item1.UrlItem">{{ item1.TitleItem }}</a></li>
                                     </ul>
                                 </div>
                             </b-col>
@@ -58,7 +27,7 @@
             </div>
         </div>
         <div class="copyright text-center">
-            © 2023 SVENTURE® by SMedcom®
+           {{ footer.Copyright }}
         </div>
         <div class="social-icon1">
             <a href="#'tel:' + publicInfo.hotline">
@@ -74,5 +43,57 @@
                         data-v-6882cb11=""></path>
                 </svg>
             </a>
-    </div>
-</footer></template>
+        </div>
+    </footer>
+</template>
+<script>
+const qs = require('qs')
+export default {
+    name: 'IndexPage',
+    layout: 'default',
+
+    data() {
+        return {
+            baseURL: this.$axios.defaults.baseURL,
+            locale: this.$i18n.locale || 'vi',
+            footer: null,
+        }
+    },
+    mounted() {
+        const query = qs.stringify(
+            {
+                populate: {
+                    LogoFooter: true,
+                    MenuFooter:{
+                        populate:{
+                            MenuItem: true,
+                        }
+                    },
+            },
+                sort: { publishedAt: 'desc' },
+                publicationState: 'live',
+                locale: this.$i18n.locale || 'vi',
+            },
+            {
+                encodeValuesOnly: true, // prettify url
+            }
+        )
+
+        this.getFooter(query)
+
+    },
+    methods: {
+        getFooter(params) {
+            this.$api
+                .getFooter(params)
+                .then((data) => {
+                    this.footer = data.data.attributes || []
+                    console.log(this.footer)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+    },
+}
+</script>

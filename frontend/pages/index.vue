@@ -85,7 +85,6 @@ export default {
           this.features = data.data.attributes.Features
           this.about = data.data.attributes.AboutUs
           this.category_services = data.data.attributes.category_services.data
-          console.log(this.category_services)
         })
         .catch((error) => {
           console.log(error)

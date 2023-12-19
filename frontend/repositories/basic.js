@@ -3,6 +3,7 @@ const home = '/api/page-home';
 const partner = '/api/our-partner';
 const building = '/api/section-building';
 const contact = '/api/section-contact';
+const footer = '/api/footer';
 
 export default ($axios) => ({
     getExercisePage(query) {
@@ -23,6 +24,10 @@ export default ($axios) => ({
 
     getSectionContact(query) {
         return this.getData(contact, query)
+    },
+
+    getFooter(query){
+        return this.getData(footer, query) 
     },
 
     // COMMON GET DATA

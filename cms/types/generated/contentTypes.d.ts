@@ -847,6 +847,38 @@ export interface ApiCategoryServiceCategoryService
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    LogoFooter: Attribute.Media;
+    DescriptionFooter: Attribute.Text;
+    MenuFooter: Attribute.Component<'menu-footer.menu-footer', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOurPartnerOurPartner extends Schema.SingleType {
   collectionName: 'our_partners';
   info: {
@@ -1281,6 +1313,7 @@ declare module '@strapi/types' {
       'plugin::menus.menu': PluginMenusMenu;
       'plugin::menus.menu-item': PluginMenusMenuItem;
       'api::category-service.category-service': ApiCategoryServiceCategoryService;
+      'api::footer.footer': ApiFooterFooter;
       'api::our-partner.our-partner': ApiOurPartnerOurPartner;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::post.post': ApiPostPost;

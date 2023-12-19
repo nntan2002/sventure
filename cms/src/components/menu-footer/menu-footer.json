@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_menu_footer_menu_footers",
+  "info": {
+    "displayName": "Menu footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TitleMenu": {
+      "type": "string"
+    },
+    "MenuItem": {
+      "displayName": "MenuItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "menu-footer.menu-item"
+    }
+  }
+}

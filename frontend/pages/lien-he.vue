@@ -18,7 +18,6 @@
                 </div>
             </b-container>
         </section>
-        <home-page-Building />
     </div>
 </template>
   

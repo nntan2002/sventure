@@ -25,15 +25,15 @@
                                 <ul v-if="menu?.children?.data" class="menu1">
                                     <li v-for="item in menu.children.data" :key="item.title"
                                         :class="item.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
-                                        <nuxt-link :to="item.attributes.url" :target="item.attributes.target">
+                                        <a :href="item.attributes.url" :target="item.attributes.target">
                                             {{ item.attributes.title }}
-                                        </nuxt-link>
+                                        </a>
                                         <ul v-if="item.attributes.children.data.length > 0" class="sub-menu">
                                             <li v-for="item1 in item.attributes.children.data" :key="item1.title"
                                                 :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
-                                                <nuxt-link :to="item1.attributes.url" :target="item1.attributes.target">
+                                                <a :href="item1.attributes.url" :target="item1.attributes.target">
                                                     {{ item1.attributes.title }}
-                                                </nuxt-link>
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -87,18 +87,18 @@
                     <ul v-if="menu?.children?.data" class="menu1">
                         <li v-for="item in menu.children.data" :key="item.title"
                             :class="item.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
-                            <nuxt-link :to="item.attributes.url" :target="item.attributes.target">
+                            <a :href="item.attributes.url" :target="item.attributes.target">
                                 {{ item.attributes.title }}
                                 <span v-if="item.attributes.children.data.length > 0" @click="clickspan($event)">
                                     +
                                 </span>
-                            </nuxt-link>
+                            </a>
                             <ul v-if="item.attributes.children.data.length > 0" class="sub-menu">
                                 <li v-for="item1 in item.attributes.children.data" :key="item1.title"
                                     :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
-                                    <nuxt-link :to="item1.attributes.url" :target="item1.attributes.target">
+                                    <a :href="item1.attributes.url" :target="item1.attributes.target">
                                         {{ item1.attributes.title }}
-                                    </nuxt-link>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

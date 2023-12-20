@@ -37,8 +37,6 @@
                 </div>
             </b-container>
         </section>
-        <home-page-Building />
-        <home-page-Contact />
     </div>
 </template>
   

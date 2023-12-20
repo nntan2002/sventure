@@ -58,6 +58,17 @@
         }
       },
       "type": "text"
+    },
+    "SocialMedia": {
+      "displayName": "SocialMedia",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "social-media.social-media"
     }
   }
 }

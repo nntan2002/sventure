@@ -4,6 +4,7 @@
  */
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import i18N from "@strapi/plugin-i18n/strapi-admin";
+import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import strapiPluginCkeditor5 from "strapi-plugin-ckeditor5/strapi-admin";
 import menus from "strapi-plugin-menus/strapi-admin";
@@ -13,6 +14,7 @@ renderAdmin(document.getElementById("strapi"), {
   plugins: {
     "strapi-cloud": strapiCloud,
     i18n: i18N,
+    seo: seo,
     "users-permissions": usersPermissions,
     "strapi-plugin-ckeditor5": strapiPluginCkeditor5,
     menus: menus,

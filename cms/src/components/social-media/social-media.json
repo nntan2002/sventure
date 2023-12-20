@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_social_media_social_medias",
+  "info": {
+    "displayName": "SocialMedia"
+  },
+  "options": {},
+  "attributes": {
+    "UrlMess": {
+      "type": "string"
+    },
+    "UrlZalo": {
+      "type": "string"
+    },
+    "Hotline": {
+      "type": "string"
+    }
+  }
+}

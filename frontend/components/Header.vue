@@ -11,150 +11,32 @@
                     <div class="menu d-lg-flex d-none">
                         <div class="menu-item">
                             <div class="icon">
-                                <svg width="25px" height="25px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg width="25px" height="25px" viewBox="0 0 18 18" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g stroke="none" stroke-width="1" fill-rule="evenodd">
                                         <path
                                             d="M2,14 C3.1045695,14 4,14.8954305 4,16 C4,17.1045695 3.1045695,18 2,18 C0.8954305,18 0,17.1045695 0,16 C0,14.8954305 0.8954305,14 2,14 Z M9,14 C10.1045695,14 11,14.8954305 11,16 C11,17.1045695 10.1045695,18 9,18 C7.8954305,18 7,17.1045695 7,16 C7,14.8954305 7.8954305,14 9,14 Z M16,14 C17.1045695,14 18,14.8954305 18,16 C18,17.1045695 17.1045695,18 16,18 C14.8954305,18 14,17.1045695 14,16 C14,14.8954305 14.8954305,14 16,14 Z M2,7 C3.1045695,7 4,7.8954305 4,9 C4,10.1045695 3.1045695,11 2,11 C0.8954305,11 0,10.1045695 0,9 C0,7.8954305 0.8954305,7 2,7 Z M9,7 C10.1045695,7 11,7.8954305 11,9 C11,10.1045695 10.1045695,11 9,11 C7.8954305,11 7,10.1045695 7,9 C7,7.8954305 7.8954305,7 9,7 Z M16,7 C17.1045695,7 18,7.8954305 18,9 C18,10.1045695 17.1045695,11 16,11 C14.8954305,11 14,10.1045695 14,9 C14,7.8954305 14.8954305,7 16,7 Z M2,0 C3.1045695,0 4,0.8954305 4,2 C4,3.1045695 3.1045695,4 2,4 C0.8954305,4 0,3.1045695 0,2 C0,0.8954305 0.8954305,0 2,0 Z M9,0 C10.1045695,0 11,0.8954305 11,2 C11,3.1045695 10.1045695,4 9,4 C7.8954305,4 7,3.1045695 7,2 C7,0.8954305 7.8954305,0 9,0 Z M16,0 C17.1045695,0 18,0.8954305 18,2 C18,3.1045695 17.1045695,4 16,4 C14.8954305,4 14,3.1045695 14,2 C14,0.8954305 14.8954305,0 16,0 Z">
                                         </path>
                                     </g>
                                 </svg>
-                                <span>Categarory</span>
+                                <span>{{ menu?.title }}</span>
                             </div>
                             <div class="nav">
-                                <ul class="menu1">
-                                    <li>
-                                        <nuxt-link to="/">
-                                            Home
+                                <ul v-if="menu?.children?.data" class="menu1">
+                                    <li v-for="item in menu.children.data" :key="item.title"
+                                        :class="item.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                                        <nuxt-link :to="item.attributes.url" :target="item.attributes.target">
+                                            {{ item.attributes.title }}
                                         </nuxt-link>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="tin-tuc">
-                                            News
-                                        </nuxt-link>
-                                    </li>
-                                    <li class="has-child-menu-item">
-                                        <nuxt-link to="/dich-vu">
-                                            Services
-                                        </nuxt-link>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <nuxt-link to="/dich-vu/chuyen-muc-dich-vu">
-                                                    Business Services
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="/dich-vu/chuyen-muc-dich-vu">
-                                                    Office Services
+                                        <ul v-if="item.attributes.children.data.length > 0" class="sub-menu">
+                                            <li v-for="item1 in item.attributes.children.data" :key="item1.title"
+                                                :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                                                <nuxt-link :to="item1.attributes.url" :target="item1.attributes.target">
+                                                    {{ item1.attributes.title }}
                                                 </nuxt-link>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="https://sventure.cls.vn/">
-                                            E-Learning
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="#">
-                                            Contact
-                                        </nuxt-link>
-                                    </li>
-                                    <!-- <li class="has-child-menu-item">
-                                        <nuxt-link to="#">
-                                            Categories
-                                        </nuxt-link>
-                                        <ul class="sub-menu">
-                                            <li class="has-child-menu-item">
-                                                <nuxt-link to="#">
-                                                    Category 1
-                                                </nuxt-link>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <nuxt-link to="#">
-                                                            Category 1
-                                                        </nuxt-link>
-                                                    </li>
-                                                    <li>
-                                                        <nuxt-link to="#">
-                                                            Category 2
-                                                        </nuxt-link>
-                                                    </li>
-                                                    <li>
-                                                        <nuxt-link to="#">
-                                                            Category 3
-                                                        </nuxt-link>
-                                                    </li>
-                                                    <li>
-                                                        <nuxt-link to="#">
-                                                            Category 4
-                                                        </nuxt-link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 2
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 3
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 4
-                                                </nuxt-link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="#">
-                                            Contact
-                                        </nuxt-link>
-                                    </li>
-                                    <li class="has-child-menu-item">
-                                        <nuxt-link to="#">
-                                            Category 1
-                                        </nuxt-link>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 1
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 2
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 3
-                                                </nuxt-link>
-                                            </li>
-                                            <li>
-                                                <nuxt-link to="#">
-                                                    Category 4
-                                                </nuxt-link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="#">
-                                            Category 2
-                                        </nuxt-link>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="#">
-                                            Category 3
-                                        </nuxt-link>
-                                    </li>
-                                    <li>
-                                        <nuxt-link to="#">
-                                            Category 4
-                                        </nuxt-link>
-                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -171,7 +53,7 @@
                             <a href="#" class="login">
                                 <i class="fas fa-user"></i>
                                 <span>
-                                    Log In
+                                    Đăng Nhập
                                 </span>
                             </a>
                         </div>
@@ -179,7 +61,7 @@
                             <a href="#" class="signup">
                                 <i class="fas fa-user-plus"></i>
                                 <span>
-                                    Sign Up
+                                    Đăng Ký
                                 </span>
                             </a>
                         </div>
@@ -202,98 +84,23 @@
                     </div>
                 </div>
                 <div class="bottom-menu-mobile">
-                    <ul class="menu1">
-                        <li>
-                            <nuxt-link to="#">
-                                Home
-                            </nuxt-link>
-                        </li>
-                        <li class="has-child-menu-item">
-                            <nuxt-link to="#">
-                                Services
-                                <span @click="clickspan($event)">
+                    <ul v-if="menu?.children?.data" class="menu1">
+                        <li v-for="item in menu.children.data" :key="item.title"
+                            :class="item.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                            <nuxt-link :to="item.attributes.url" :target="item.attributes.target">
+                                {{ item.attributes.title }}
+                                <span v-if="item.attributes.children.data.length > 0" @click="clickspan($event)">
                                     +
                                 </span>
                             </nuxt-link>
-
-                            <ul class="sub-menu">
-                                <li>
-                                    <nuxt-link to="#">
-                                        Business Services
-                                    </nuxt-link>
-                                </li>
-                                <li>
-                                    <nuxt-link to="#">
-                                        Office Services
+                            <ul v-if="item.attributes.children.data.length > 0" class="sub-menu">
+                                <li v-for="item1 in item.attributes.children.data" :key="item1.title"
+                                    :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                                    <nuxt-link :to="item1.attributes.url" :target="item1.attributes.target">
+                                        {{ item1.attributes.title }}
                                     </nuxt-link>
                                 </li>
                             </ul>
-                        </li>
-                        <!-- <li class="has-child-menu-item">
-                            <a href="#">
-                                Categories
-
-                                <span @click="clickspan($event)">
-                                    +
-                                </span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="has-child-menu-item">
-                                    <nuxt-link to="#">
-                                        Category 1
-                                        <span @click="clickspan($event)">
-                                            +
-                                        </span>
-                                    </nuxt-link>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <nuxt-link to="#">
-                                                Category 1
-                                            </nuxt-link>
-                                        </li>
-                                        <li>
-                                            <nuxt-link to="#">
-                                                Category 2
-                                            </nuxt-link>
-                                        </li>
-                                        <li>
-                                            <nuxt-link to="#">
-                                                Category 3
-                                            </nuxt-link>
-                                        </li>
-                                        <li>
-                                            <nuxt-link to="#">
-                                                Category 4
-                                            </nuxt-link>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <nuxt-link to="#">
-                                        Category 2
-                                    </nuxt-link>
-                                </li>
-                                <li>
-                                    <nuxt-link to="#">
-                                        Category 3
-                                    </nuxt-link>
-                                </li>
-                                <li>
-                                    <nuxt-link to="#">
-                                        Category 4
-                                    </nuxt-link>
-                                </li>
-                            </ul>
-                        </li> -->
-                        <li>
-                            <a href="https://sventure.cls.vn/">
-                                E-Learning
-                            </a>
-                        </li>
-                        <li>
-                            <nuxt-link to="#">
-                                Contact
-                            </nuxt-link>
                         </li>
                     </ul>
                 </div>
@@ -303,7 +110,7 @@
                         <a href="#" class="login">
                             <i class="fas fa-user"></i>
                             <span>
-                                Log In
+                                Đăng Nhập
                             </span>
                         </a>
                     </div>
@@ -311,7 +118,7 @@
                         <a href="#" class="signup">
                             <i class="fas fa-user-plus"></i>
                             <span>
-                                Sign Up
+                                Đăng Ký
                             </span>
                         </a>
                     </div>
@@ -322,20 +129,51 @@
 </template>
 
 <script>
+const qs = require('qs')
+
 export default {
     data() {
         return {
-            active_siderbar: false
+            active_siderbar: false,
+            menu: null,
         }
     },
     mounted() {
         console.log(this.$i18n.locale);
+
+        const query = qs.stringify(
+            {
+                populate: '*',
+                filters: {
+                    slug: 'menu-vi',
+                },
+                nested: true,
+                publicationState: 'live',
+            },
+            {
+                encodeValuesOnly: true, // prettify url
+            }
+        )
+
+        this.getMenu(query)
     },
     methods: {
         clickspan(e) {
             event.preventDefault()
             e.target.parentElement.parentElement.classList.toggle('sub-menu-active')
-        }
+        },
+
+        getMenu(params) {
+            this.$api
+                .getMenu(params)
+                .then((data) => {
+                    this.menu = data.data[0].attributes.items.data[0].attributes
+                    console.log(this.menu)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
     }
 }
 </script>

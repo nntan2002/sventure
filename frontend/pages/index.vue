@@ -48,6 +48,9 @@ export default {
               Thumbnail: true,
             }
           },
+          posts:{
+            populate: '*',
+          }
         },
         sort: { publishedAt: 'desc' },
         publicationState: 'live',
@@ -85,6 +88,8 @@ export default {
           this.features = data.data.attributes.Features
           this.about = data.data.attributes.AboutUs
           this.category_services = data.data.attributes.category_services.data
+          this.posts = data.data.attributes.posts.data
+          console.log(this.posts)
         })
         .catch((error) => {
           console.log(error)

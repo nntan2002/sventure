@@ -4,6 +4,7 @@ const partner = '/api/our-partner';
 const building = '/api/section-building';
 const contact = '/api/section-contact';
 const footer = '/api/footer';
+const menu = '/api/menus/';
 
 export default ($axios) => ({
     getExercisePage(query) {
@@ -28,6 +29,10 @@ export default ($axios) => ({
 
     getFooter(query){
         return this.getData(footer, query) 
+    },
+
+    getMenu(query){
+        return this.getData(menu, query) 
     },
 
     // COMMON GET DATA

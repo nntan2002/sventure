@@ -14,7 +14,7 @@ export default ($axios) => ({
     getSectionPartners(query) {
         return this.basic.getSectionPartners(query);
     },
-    
+
     getSectionBuilding(query) {
         return this.basic.getSectionBuilding(query);
     },
@@ -26,4 +26,9 @@ export default ($axios) => ({
     getFooter(query) {
         return this.basic.getFooter(query);
     },
+
+    getMenu(query) {
+        return this.basic.getMenu(query);
+    },
+
 });

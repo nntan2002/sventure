@@ -88,7 +88,6 @@ export default {
                 .getFooter(params)
                 .then((data) => {
                     this.footer = data.data.attributes || []
-                    console.log(this.footer)
                 })
                 .catch((error) => {
                     console.log(error)

@@ -80,6 +80,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::category-service.category-service"
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.meta-social"
     }
   }
 }

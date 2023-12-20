@@ -823,6 +823,12 @@ export interface ApiCategoryServiceCategoryService
           localized: true;
         };
       }>;
+    Seo: Attribute.Component<'shared.meta-social'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,6 +1134,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     singularName: 'post';
     pluralName: 'posts';
     displayName: 'Post';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1163,6 +1170,12 @@ export interface ApiPostPost extends Schema.CollectionType {
         };
       }>;
     Thumbnail: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Seo: Attribute.Component<'shared.meta-social'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1373,6 +1386,12 @@ export interface ApiServiceService extends Schema.CollectionType {
       'oneToMany',
       'api::category-service.category-service'
     >;
+    Seo: Attribute.Component<'shared.meta-social'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

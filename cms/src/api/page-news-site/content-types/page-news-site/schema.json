@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_news_sites",
+  "info": {
+    "singularName": "page-news-site",
+    "pluralName": "page-news-sites",
+    "displayName": "page News site"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "banner.banner"
+    }
+  }
+}

@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="search">
-                            <form action="/search">
+                            <form action="/tim-kiem">
                                 <input type="text" placeholder="Search.." name="search" required>
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>

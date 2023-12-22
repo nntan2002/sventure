@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_buildings",
+  "info": {
+    "singularName": "page-building",
+    "pluralName": "page-buildings",
+    "displayName": "page Building"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "banner.banner",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

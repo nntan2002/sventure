@@ -17,6 +17,17 @@ export interface AboutUsAboutUs extends Schema.Component {
   };
 }
 
+export interface BannerBanner extends Schema.Component {
+  collectionName: 'components_banner_banners';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media;
+  };
+}
+
 export interface FeatureFeature extends Schema.Component {
   collectionName: 'components_feature_features';
   info: {
@@ -120,6 +131,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'about-us.about-us': AboutUsAboutUs;
+      'banner.banner': BannerBanner;
       'feature.feature': FeatureFeature;
       'menu-footer.menu-footer': MenuFooterMenuFooter;
       'menu-footer.menu-item': MenuFooterMenuItem;

@@ -853,6 +853,41 @@ export interface ApiCategoryServiceCategoryService
   };
 }
 
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FullName: Attribute.String & Attribute.Required;
+    Email: Attribute.Email & Attribute.Required;
+    Phone: Attribute.String & Attribute.Required;
+    YourCompanyName: Attribute.String;
+    Message: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -1047,6 +1082,147 @@ export interface ApiOurPartnerOurPartner extends Schema.SingleType {
   };
 }
 
+export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
+  collectionName: 'page_about_uses';
+  info: {
+    singularName: 'page-about-us';
+    pluralName: 'page-about-uses';
+    displayName: 'page AboutUs';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Banner: Attribute.Component<'banner.banner'>;
+    AboutUs: Attribute.Component<'about-us.about-us'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-about-us.page-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-about-us.page-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageBuildingPageBuilding extends Schema.SingleType {
+  collectionName: 'page_buildings';
+  info: {
+    singularName: 'page-building';
+    pluralName: 'page-buildings';
+    displayName: 'page Building';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-building.page-building',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-building.page-building',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-building.page-building',
+      'oneToMany',
+      'api::page-building.page-building'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPageContactPageContact extends Schema.SingleType {
+  collectionName: 'page_contacts';
+  info: {
+    singularName: 'page-contact';
+    pluralName: 'page-contacts';
+    displayName: 'page Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleSection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SubTitleSection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    IfameMap: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-contact.page-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-contact.page-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-contact.page-contact',
+      'oneToMany',
+      'api::page-contact.page-contact'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiPageHomePageHome extends Schema.SingleType {
   collectionName: 'page_homes';
   info: {
@@ -1123,6 +1299,98 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       'api::page-home.page-home',
       'oneToMany',
       'api::page-home.page-home'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPageNewsSitePageNewsSite extends Schema.SingleType {
+  collectionName: 'page_news_sites';
+  info: {
+    singularName: 'page-news-site';
+    pluralName: 'page-news-sites';
+    displayName: 'page News site';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-news-site.page-news-site',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-news-site.page-news-site',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-news-site.page-news-site',
+      'oneToMany',
+      'api::page-news-site.page-news-site'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPageServicePageService extends Schema.SingleType {
+  collectionName: 'page_services';
+  info: {
+    singularName: 'page-service';
+    pluralName: 'page-services';
+    displayName: 'page Service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-service.page-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-service.page-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-service.page-service',
+      'oneToMany',
+      'api::page-service.page-service'
     >;
     locale: Attribute.String;
   };
@@ -1435,10 +1703,16 @@ declare module '@strapi/types' {
       'plugin::menus.menu': PluginMenusMenu;
       'plugin::menus.menu-item': PluginMenusMenuItem;
       'api::category-service.category-service': ApiCategoryServiceCategoryService;
+      'api::contact.contact': ApiContactContact;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::our-partner.our-partner': ApiOurPartnerOurPartner;
+      'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
+      'api::page-building.page-building': ApiPageBuildingPageBuilding;
+      'api::page-contact.page-contact': ApiPageContactPageContact;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::page-news-site.page-news-site': ApiPageNewsSitePageNewsSite;
+      'api::page-service.page-service': ApiPageServicePageService;
       'api::post.post': ApiPostPost;
       'api::section-building.section-building': ApiSectionBuildingSectionBuilding;
       'api::section-contact.section-contact': ApiSectionContactSectionContact;

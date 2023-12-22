@@ -2,14 +2,14 @@
     <section>
         <div class="banner-pages">
             <div class="img-item">
-                <img src="~/assets/images/banner-service.jpeg" alt="">
+                <img :src="baseURL + banner?.Image.data.attributes.url" alt="">
             </div>
             <div class="content-item">
                 <b-container>
                     <b-row class="justify-content-center">
                         <b-col md="8">
                             <h1 class="title-pages">
-                                {{ title }}
+                                {{ banner?.Title }}
                             </h1>
                         </b-col>
                     </b-row>
@@ -26,13 +26,9 @@ export default {
 
     props: {
         banner: {
-            type: Array,
+            type: Object,
             default: () => null,
         },
-        title: {
-            type: String,
-            default: null
-        }
     },
     data() {
         return {

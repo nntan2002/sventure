@@ -1,8 +1,12 @@
 const exercisePage = '/api/page-exercise';
-const home = '/api/page-home';
+const homePage = '/api/page-home';
+const contactPage = '/api/page-contact';
+
 const partner = '/api/our-partner';
 const building = '/api/section-building';
 const contact = '/api/section-contact';
+
+
 const footer = '/api/footer';
 const menu = '/api/menus/';
 
@@ -12,7 +16,11 @@ export default ($axios) => ({
     },
 
     getHomePage(query) {
-        return this.getData(home, query)
+        return this.getData(homePage, query)
+    },
+
+    getContactPage(query) {
+        return this.getData(contactPage, query)
     },
 
     getSectionPartners(query) {

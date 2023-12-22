@@ -11,6 +11,11 @@ export default ($axios) => ({
         return this.basic.getHomePage(query);
     },
 
+
+    getContactPage(query) {
+        return this.basic.getContactPage(query);
+    },
+
     getSectionPartners(query) {
         return this.basic.getSectionPartners(query);
     },

@@ -168,7 +168,6 @@ export default {
                 .getMenu(params)
                 .then((data) => {
                     this.menu = data.data[0].attributes.items.data[0].attributes
-                    console.log(this.menu)
                 })
                 .catch((error) => {
                     console.log(error)

@@ -4,9 +4,10 @@ const contactPage = '/api/page-contact';
 
 const partner = '/api/our-partner';
 const building = '/api/section-building';
-const contact = '/api/section-contact';
+const contactSection = '/api/section-contact';
 
 
+const contact = '/api/contacts';
 const footer = '/api/footer';
 const menu = '/api/menus/';
 
@@ -32,15 +33,15 @@ export default ($axios) => ({
     },
 
     getSectionContact(query) {
-        return this.getData(contact, query)
+        return this.getData(contactSection, query)
     },
 
-    getFooter(query){
-        return this.getData(footer, query) 
+    getFooter(query) {
+        return this.getData(footer, query)
     },
 
-    getMenu(query){
-        return this.getData(menu, query) 
+    getMenu(query) {
+        return this.getData(menu, query)
     },
 
     // COMMON GET DATA
@@ -59,5 +60,22 @@ export default ($axios) => ({
                     reject(error);
                 });
         });
-    }
+    },
+
+    createContact(payload) {
+        return new Promise((resolve, reject) => {
+            $axios.post(`${contact}`, payload)
+                .then(function ({
+                    data,
+                    status
+                }) {
+                    if (status === 200) {
+                        resolve(data);
+                    }
+                })
+                .catch(function (error) {
+                    reject(error);
+                });
+        });
+    },
 })

@@ -941,6 +941,204 @@ section {
             }
         }
     }
+
+    .contact {
+        .form-item {
+            margin-bottom: 50px;
+
+            input,
+            label {
+                width: 100%;
+                border: 0px solid #5A5A5A;
+                border-bottom: .5px solid $primary-color;
+                height: 40px;
+                margin-bottom: 0;
+            }
+
+            input:focus,
+            textarea:focus {
+                outline: none;
+            }
+
+            textarea {
+                height: 165px;
+                width: 100%;
+                border: 0;
+                padding: 5px 10px;
+                background-color: #F8F8F8;
+                margin-top: 9px;
+                resize: none;
+            }
+
+            button {
+                width: 170px;
+                height: 40px;
+                margin-left: 20px;
+                border: 0;
+                font-weight: 400;
+                font-size: 14px;
+                background-color: $primary-color;
+                color: #fff;
+            }
+
+            .luuy {
+                margin-top: 5px;
+            }
+        }
+
+        .group {
+            position: relative;
+            margin-bottom: 50px;
+
+            input {
+                font-size: 18px;
+                display: block;
+                height: 40px;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $primary-color;
+                margin-bottom: 0;
+            }
+
+            input:focus {
+                outline: none;
+            }
+
+            /* LABEL ======================================= */
+            label {
+                color: #999;
+                font-size: 18px;
+                font-weight: normal;
+                position: absolute;
+                pointer-events: none;
+                left: 0px;
+                top: 0px;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+
+            /* active state */
+            input:focus~label,
+            input:valid~label {
+                top: -20px;
+                font-size: 14px;
+                color: $primary-color;
+            }
+
+            /* BOTTOM BARS ================================= */
+            .bar {
+                position: relative;
+                display: block;
+            }
+
+            .bar:before,
+            .bar:after {
+                content: '';
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: $primary-color;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+            }
+
+            .bar:before {
+                left: 50%;
+            }
+
+            .bar:after {
+                right: 50%;
+            }
+
+            /* active state */
+            input:focus~.bar:before,
+            input:focus~.bar:after {
+                width: 50%;
+            }
+
+            /* HIGHLIGHTER ================================== */
+            .highlight {
+                position: absolute;
+                height: 60%;
+                width: 100px;
+                top: 25%;
+                left: 0;
+                pointer-events: none;
+                opacity: 0.5;
+            }
+
+            /* active state */
+            input:focus~.highlight {
+                -webkit-animation: inputHighlighter 0.3s ease;
+                -moz-animation: inputHighlighter 0.3s ease;
+                animation: inputHighlighter 0.3s ease;
+            }
+
+            /* ANIMATIONS ================ */
+            @-webkit-keyframes inputHighlighter {
+                from {
+                    background: #5264AE;
+                }
+
+                to {
+                    width: 0;
+                    background: transparent;
+                }
+            }
+
+            @-moz-keyframes inputHighlighter {
+                from {
+                    background: #5264AE;
+                }
+
+                to {
+                    width: 0;
+                    background: transparent;
+                }
+            }
+
+            @keyframes inputHighlighter {
+                from {
+                    background: #5264AE;
+                }
+
+                to {
+                    width: 0;
+                    background: transparent;
+                }
+            }
+        }
+
+        .submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            button {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+                padding: 20px 25px;
+                background-color: $primary-color;
+                border: 0;
+            }
+        }
+
+        .map {
+            height: 100%;
+
+            iframe {
+                height: 100% !important;
+                min-height: 400px;
+                width: 100%;
+            }
+        }
+    }
 }
 
 footer {

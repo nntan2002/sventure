@@ -36,4 +36,7 @@ export default ($axios) => ({
         return this.basic.getMenu(query);
     },
 
+    createContact(payload) {
+        return this.basic.createContact(payload)
+    },
 });

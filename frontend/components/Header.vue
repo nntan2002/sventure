@@ -105,8 +105,8 @@
                     </ul>
                 </div>
 
-                <div class="user">
-                    <div class="user-item">
+                <div class="user d-flex">
+                    <div class="user-item mr-3">
                         <a href="#" class="login">
                             <i class="fas fa-user"></i>
                             <span>

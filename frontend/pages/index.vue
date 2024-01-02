@@ -3,9 +3,9 @@
     <home-page-Banner :banner="banner" />
     <home-page-Features :features="features" />
     <About-us v-if="about" :about="about" />
-    <home-page-Services v-if="category_services" :category_services="category_services" />
+    <home-page-Services v-if="category_services" :category_services="category_services" :title="TitleService"/>
     <Partners v-if="about2" :partners="about2" />
-    <home-page-News v-if="posts" :posts="posts"/>
+    <home-page-News v-if="posts" :posts="posts" :title="TitlePost"/>
   </div>
 </template>
 
@@ -25,6 +25,8 @@ export default {
       about2: null,
       category_services: null,
       posts: null,
+      TitlePost: null,
+      TitleService: null,
     }
   },
   mounted() {
@@ -89,7 +91,9 @@ export default {
           this.about = data.data.attributes.AboutUs
           this.category_services = data.data.attributes.category_services.data
           this.posts = data.data.attributes.posts.data
-          console.log(this.posts)
+          this.TitlePost = data.data.attributes.TitlePost
+          this.TitleService = data.data.attributes.TitleService
+          console.log(data.data)
         })
         .catch((error) => {
           console.log(error)

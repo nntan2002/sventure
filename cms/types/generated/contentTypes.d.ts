@@ -829,6 +829,12 @@ export interface ApiCategoryServiceCategoryService
           localized: true;
         };
       }>;
+    Banner: Attribute.Component<'banner.banner-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1449,6 +1455,12 @@ export interface ApiPostPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    Banner: Attribute.Component<'banner.banner-single'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1655,6 +1667,12 @@ export interface ApiServiceService extends Schema.CollectionType {
       'api::category-service.category-service'
     >;
     Seo: Attribute.Component<'shared.meta-social'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Banner: Attribute.Component<'banner.banner-single'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

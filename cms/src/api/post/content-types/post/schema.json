@@ -74,6 +74,16 @@
         }
       },
       "component": "shared.meta-social"
+    },
+    "Banner": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "banner.banner-single"
     }
   }
 }

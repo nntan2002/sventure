@@ -4,7 +4,9 @@
             <div class="service">
                 <b-row class="justify-content-center text-center">
                     <b-col md="8">
-                        <h2 class="title-section mb-4">DỊCH VỤ</h2>
+                        <h2 class="title-section mb-4">
+                            {{ title }}
+                        </h2>
                         <div class="mb-4"></div>
                     </b-col>
                 </b-row>
@@ -59,6 +61,10 @@ export default {
             type: Array,
             default: () => null,
         },
+        title: {
+            type: String,
+            default: () => null,
+        }
     },
 
     data() {

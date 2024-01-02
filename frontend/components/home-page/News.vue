@@ -4,7 +4,9 @@
             <div class="news">
                 <b-row class="justify-content-center text-center">
                     <b-col md="8">
-                        <h2 class="title-section mb-4">Latest News</h2>
+                        <h2 class="title-section mb-4">
+                            {{ title }}
+                        </h2>
                         <div class="mb-4"></div>
                     </b-col>
                 </b-row>
@@ -12,8 +14,8 @@
                     <b-row>
                         <b-col md="6" class="mt-3">
                             <!-- eslint-disable-next-line -->
-                            <a v-for="(item, index) in posts" :key="item.Title" href="#" v-if="index === 0" >
-                                <div class="box-news" >
+                            <a v-for="(item, index) in posts" :key="item.Title" href="#" v-if="index === 0">
+                                <div class="box-news">
                                     <div class="img-box">
                                         <img src="~/assets/images/news1.jpg" alt="">
                                     </div>
@@ -29,7 +31,7 @@
                             </a>
                         </b-col>
                         <b-col md="6" class="d-flex flex-column justify-content-between">
-                             <!-- eslint-disable-next-line -->
+                            <!-- eslint-disable-next-line -->
                             <a v-for="(item, index) in posts" :key="item.Title" href="#" v-if="index > 0" class="mt-3">
                                 <div class="box-news" style="height: auto !important">
                                     <b-row>
@@ -76,6 +78,10 @@ export default {
             type: Array,
             default: () => null,
         },
+        title: {
+            type: String,
+            default: () => null,
+        }
     },
 
     data() {

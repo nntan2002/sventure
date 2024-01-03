@@ -7,7 +7,7 @@ const building = '/api/section-building';
 const contactSection = '/api/section-contact';
 
 
-const contact = '/api/contacts';
+const contact = '/api/contact/addContact';
 const footer = '/api/footer';
 const menu = '/api/menus/';
 

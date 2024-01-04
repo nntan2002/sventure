@@ -61,7 +61,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: process.env.API_URL || 'https://cms.svcom.vn',
+    baseURL: process.env.API_URL || 'https://cms.sventure.vn',
     // baseURL: process.env.API_URL || 'http://localhost:1337',
     debug: process.env.DEBUG || false,
     proxyHeaders: false,

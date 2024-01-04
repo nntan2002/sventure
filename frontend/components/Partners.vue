@@ -50,23 +50,23 @@ export default {
             count: 1,
             swiperOptions: {
                 loop: true,
-                grabCursor: false,
+                // grabCursor: false,
                 slidesPerView: 2,
-                spaceBetween: 40,
-                allowTouchMove: true,
+                spaceBetween: 10,
+                // allowTouchMove: true,
                 speed: 3000,
                 breakpoints: {
                     0: {
                         slidesPerView: 2,
-                        spaceBetween: 20,
+                        spaceBetween: 10,
                     },
                     768: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
+                        spaceBetween: 40,
                     },
                     992: {
                         slidesPerView: 4,
-                        spaceBetween: 40,
+                        spaceBetween: 50,
                     },
                 },
                 autoplay: {

@@ -10,23 +10,20 @@
                             <div class="mb-4"></div>
                         </b-col>
                     </b-row>
-                    <div class="content-section">
+                    <div class="content-section" v-if="dataNews">
                         <b-row>
-                            <b-col v-for="i in 6" :key="i" md="4" class="mt-3">
+                            <b-col v-for="item in dataNews" :key="item.id" sm="6" md="4" class="mt-4">
                                 <a href="#">
                                     <div class="box-news">
                                         <div class="img-box">
-                                            <img src="~/assets/images/news1.jpg" alt="">
+                                            <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url" alt="">
                                         </div>
                                         <div class="content-box">
                                             <div class="title my-3">
-                                                Title News 0{{ i }}
+                                                {{ item.attributes.Title }}
                                             </div>
                                             <div class="description mb-4">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis
-                                                architecto earum, fugit nemo autem consequatur sint exercitationem odio
-                                                doloribus
-                                                facilis praesentium ea commodi cupiditate. Eligendi ea ratione et? Porro?
+                                                {{ item.attributes.Description }}
                                             </div>
                                         </div>
                                     </div>
@@ -41,6 +38,8 @@
 </template>
   
 <script>
+const qs = require('qs')
+
 export default {
     name: 'News',
     layout: 'default',
@@ -49,7 +48,43 @@ export default {
         return {
             baseURL: this.$axios.defaults.baseURL,
             banner: [],
+            dataNews: null,
         }
+    },
+    mounted() {
+        const query = qs.stringify(
+            {
+                fields: [
+                    'Title',
+                    'Slug',
+                    'Description',
+                ],
+                populate: [
+                    'Thumbnail'
+                ],
+                sort: { publishedAt: 'desc' },
+                publicationState: 'live',
+                locale: this.$i18n.locale || 'vi',
+            },
+            {
+                encodeValuesOnly: true, // prettify url
+            }
+        )
+
+        this.getPost(query)
+    },
+    methods: {
+        getPost(params) {
+            this.$api
+                .getPost(params)
+                .then((data) => {
+                    this.dataNews = data?.data || null
+                    console.log(this.dataNews)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
     },
 }
 </script>

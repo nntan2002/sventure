@@ -16,6 +16,11 @@ export default ($axios) => ({
         return this.basic.getContactPage(query);
     },
 
+
+    getServicePage(query) {
+        return this.basic.getServicePage(query);
+    },
+
     getSectionPartners(query) {
         return this.basic.getSectionPartners(query);
     },
@@ -38,5 +43,13 @@ export default ($axios) => ({
 
     createContact(payload) {
         return this.basic.createContact(payload)
+    },
+
+    getCategoryService(payload) {
+        return this.basic.getCategoryService(payload)
+    },
+
+    getPost(payload) {
+        return this.basic.getPost(payload)
     },
 });

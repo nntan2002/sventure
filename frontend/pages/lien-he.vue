@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <item-Banner :banner="banner" />
+        <item-Banner v-if="banner" :banner="banner" />
         <section class="section-padding">
             <b-container>
                 <div class="contact">

@@ -1,10 +1,14 @@
 const exercisePage = '/api/page-exercise';
 const homePage = '/api/page-home';
 const contactPage = '/api/page-contact';
+const servicePage = '/api/page-service'
 
 const partner = '/api/our-partner';
 const building = '/api/section-building';
 const contactSection = '/api/section-contact';
+
+const categoryService = '/api/category-services';
+const post = '/api/posts';
 
 
 const contact = '/api/contact/addContact';
@@ -22,6 +26,10 @@ export default ($axios) => ({
 
     getContactPage(query) {
         return this.getData(contactPage, query)
+    },
+
+    getServicePage(query) {
+        return this.getData(servicePage, query)
     },
 
     getSectionPartners(query) {
@@ -43,6 +51,15 @@ export default ($axios) => ({
     getMenu(query) {
         return this.getData(menu, query)
     },
+
+    getCategoryService(query) {
+        return this.getData(categoryService, query)
+    },
+
+    getPost(query) {
+        return this.getData(post, query)
+    },
+
 
     // COMMON GET DATA
     getData(url, query) {

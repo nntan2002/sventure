@@ -1362,6 +1362,7 @@ export interface ApiPageServicePageService extends Schema.SingleType {
     singularName: 'page-service';
     pluralName: 'page-services';
     displayName: 'page Service';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1373,6 +1374,18 @@ export interface ApiPageServicePageService extends Schema.SingleType {
   };
   attributes: {
     Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    TitleSection: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    DescriptionSection: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

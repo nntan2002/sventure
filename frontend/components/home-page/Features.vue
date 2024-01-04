@@ -4,7 +4,7 @@
             <div class="container">
                 <b-row class="justify-content-center">
                     <b-col v-for="(item, index) in features" :key="index" sm="6" md="3">
-                        <div class="box-features">
+                        <div class="box-features justify-content-md-center justify-content-start">
                             <div class="box-icon">
                                 <img :src="baseURL + item.Image.data.attributes.url" :alt=" item.Image.data.attributes.name">
                             </div>

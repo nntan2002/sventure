@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-service",
     "pluralName": "page-services",
-    "displayName": "page Service"
+    "displayName": "page Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,22 @@
         }
       },
       "component": "banner.banner"
+    },
+    "TitleSection": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "DescriptionSection": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

@@ -104,6 +104,7 @@ header {
                                 color: $dark-color;
                                 font-weight: 600;
                                 transition: all .3s ease-in-out;
+                                display: block;
                             }
 
                             .sub-menu {
@@ -150,7 +151,7 @@ header {
                         }
 
                         .has-child-menu-item {
-                            &::after {
+                            &>a::after {
                                 content: '\1F892';
                                 position: absolute;
                                 right: 10px;
@@ -159,7 +160,7 @@ header {
                                 transition: all .3s ease-in-out;
                             }
 
-                            &:hover {
+                            &>a:hover {
                                 &::after {
                                     color: #fff;
                                 }
@@ -435,6 +436,7 @@ header {
     text-decoration: none;
     background-color: $primary-color;
     position: relative;
+    text-align: center;
 
     span {
         font-size: 16px;
@@ -746,7 +748,6 @@ section {
         .box-features {
             display: flex;
             align-items: center;
-            justify-content: center;
             padding: 30px 0;
             height: 100%;
             text-align: center;

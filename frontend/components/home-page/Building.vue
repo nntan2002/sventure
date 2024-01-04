@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="building section-padding" :style="'background-image: url(' + baseURL + building.BackgroundSection.data.attributes.url + ');'">
+        <div class="building section-padding" :style="'background-image: url(' + baseURL + building?.BackgroundSection.data.attributes.url + ');'">
             <div class="container">
                 <div class="content-section">
                     <div class="content-item">

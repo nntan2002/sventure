@@ -1,7 +1,8 @@
 const exercisePage = '/api/page-exercise';
 const homePage = '/api/page-home';
 const contactPage = '/api/page-contact';
-const servicePage = '/api/page-service'
+const servicePage = '/api/page-service';
+const newsPage = '/api/page-news-site';
 
 const partner = '/api/our-partner';
 const building = '/api/section-building';
@@ -22,6 +23,10 @@ export default ($axios) => ({
 
     getHomePage(query) {
         return this.getData(homePage, query)
+    },
+
+    getNewsPage(query) {
+        return this.getData(newsPage, query)
     },
 
     getContactPage(query) {

@@ -11,6 +11,9 @@ export default ($axios) => ({
         return this.basic.getHomePage(query);
     },
 
+    getNewsPage(query) {
+        return this.basic.getNewsPage(query);
+    },
 
     getContactPage(query) {
         return this.basic.getContactPage(query);

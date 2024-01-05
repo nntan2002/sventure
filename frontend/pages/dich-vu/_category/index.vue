@@ -6,7 +6,10 @@
                 <div class="service">
                     <b-row class="justify-content-center text-center">
                         <b-col md="8">
-                            <h2 class="title-section mb-4">List Services</h2>
+                            <h2 class="title-section mb-4">
+                                <!-- {{ $t('test') }} -->
+                                List Services
+                            </h2>
                             <div class="mb-4">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dignissimos voluptates
                                 placeat rem iusto velit animi reiciendis aperiam consectetur est maxime unde doloribus
@@ -54,7 +57,7 @@ export default {
         }
     },
     mounted() {
-        
+
     }
 }
 </script>

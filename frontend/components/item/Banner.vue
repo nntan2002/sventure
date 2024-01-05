@@ -33,7 +33,6 @@ export default {
     data() {
         return {
             baseURL: this.$axios.defaults.baseURL,
-            bannerList: [],
         }
     },
     mounted() {

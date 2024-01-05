@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <item-Banner title="News" />
+        <item-Banner v-if="banner" :banner="banner" />
         <section class="section-padding">
             <b-container>
                 <div class="news">
@@ -10,10 +10,10 @@
                             <div class="mb-4"></div>
                         </b-col>
                     </b-row>
-                    <div class="content-section" v-if="dataNews">
+                    <div v-if="dataNews" class="content-section" >
                         <b-row>
                             <b-col v-for="item in dataNews" :key="item.id" sm="6" md="4" class="mt-4">
-                                <a href="#">
+                                <a :href="'tin-tuc/' + item.attributes.Slug">
                                     <div class="box-news">
                                         <div class="img-box">
                                             <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url" alt="">
@@ -70,10 +70,38 @@ export default {
                 encodeValuesOnly: true, // prettify url
             }
         )
+        const query1 = qs.stringify(
+            {
+                populate: {
+                    Banner: {
+                        populate: {
+                            Image: true,
+                        },
+                    }
+                },
+                sort: { publishedAt: 'desc' },
+                publicationState: 'live',
+                locale: this.$i18n.locale || 'vi',
+            },
+            {
+                encodeValuesOnly: true, // prettify url
+            }
+        )
 
+        this.getNewsPage(query1)
         this.getPost(query)
     },
     methods: {
+        getNewsPage(params) {
+            this.$api
+                .getNewsPage(params)
+                .then((data) => {
+                    this.banner = data.data?.attributes?.Banner || null
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
         getPost(params) {
             this.$api
                 .getPost(params)

@@ -43,7 +43,7 @@ export default {
                 Thumbnail: {
                     populate: '*',
                 },
-                Seo:{
+                Seo: {
                     populate: '*',
                 }
             },
@@ -88,15 +88,28 @@ export default {
         return {
             title: this.postData.Title || '',
             meta: [
-                { hid: 'og:image', property: 'og:image', content: this.postShareImage },
                 {
-                    hid: 'og:title',
+                    property: 'og:image',
+                    content: this.postShareImage
+                },
+                {
                     property: 'og:title',
                     content: this.postData?.Seo?.title || '',
                 },
                 {
-                    hid: 'og:description',
                     property: 'og:description',
+                    content: this.postData?.Seo?.description || '',
+                },
+                {
+                    property: 'twitter:card',
+                    content: this.postShareImage
+                },
+                {
+                    property: 'twitter:title',
+                    content: this.postData?.Seo?.title || '',
+                },
+                {
+                    property: 'twitter:description',
                     content: this.postData?.Seo?.description || '',
                 },
             ],

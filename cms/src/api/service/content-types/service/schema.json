@@ -76,9 +76,9 @@
         }
       }
     },
-    "category_services": {
+    "category_service": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::category-service.category-service"
     },
     "Seo": {

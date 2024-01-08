@@ -1674,9 +1674,9 @@ export interface ApiServiceService extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    category_services: Attribute.Relation<
+    category_service: Attribute.Relation<
       'api::service.service',
-      'oneToMany',
+      'oneToOne',
       'api::category-service.category-service'
     >;
     Seo: Attribute.Component<'shared.meta-social'> &

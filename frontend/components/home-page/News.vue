@@ -14,10 +14,12 @@
                     <b-row>
                         <b-col md="6" class="mt-3">
                             <!-- eslint-disable-next-line -->
-                            <a v-for="(item, index) in posts" :key="item.Title" href="#" v-if="index === 0">
+                            <a v-for="(item, index) in posts" :key="item.Title" v-if="index === 0"
+                                :href="'tin-tuc/' + item.attributes.Slug">
                                 <div class="box-news">
                                     <div class="img-box">
-                                        <img src="~/assets/images/news1.jpg" alt="">
+                                        <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"
+                                            :alt="item.attributes.Thumbnail.data.attributes.name">
                                     </div>
                                     <div class="content-box">
                                         <div class="title my-3">
@@ -32,12 +34,14 @@
                         </b-col>
                         <b-col md="6" class="d-flex flex-column justify-content-between">
                             <!-- eslint-disable-next-line -->
-                            <a v-for="(item, index) in posts" :key="item.Title" href="#" v-if="index > 0" class="mt-3">
+                            <a v-for="(item, index) in posts" :key="item.Title" v-if="index > 0"
+                                :href="'tin-tuc/' + item.attributes.Slug" class="mt-3">
                                 <div class="box-news" style="height: auto !important">
                                     <b-row>
                                         <b-col cols="4">
                                             <div class="img-box h-100">
-                                                <img src="~/assets/images/news1.jpg" alt=""
+                                                <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"
+                                                    :alt="item.attributes.Thumbnail.data.attributes.name"
                                                     style="height: 100%; aspect-ratio: unset;">
                                             </div>
                                         </b-col>

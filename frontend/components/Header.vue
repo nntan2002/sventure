@@ -50,7 +50,7 @@
                     </div>
                     <div class="user d-lg-flex d-none">
                         <div class="user-item">
-                            <a href="#" class="login">
+                            <a href="/coming-soon" class="login">
                                 <i class="fas fa-user"></i>
                                 <span>
                                     Đăng Nhập
@@ -58,7 +58,7 @@
                             </a>
                         </div>
                         <div class="user-item">
-                            <a href="#" class="signup">
+                            <a href="/coming-soon" class="signup">
                                 <i class="fas fa-user-plus"></i>
                                 <span>
                                     Đăng Ký

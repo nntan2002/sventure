@@ -17,6 +17,16 @@ export default {
     ]
   },
 
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: '404',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue'),
+      })
+    },
+  },
+
   ssr: true,// default value
 
   // Global CSS: https://go.nuxtjs.dev/config-css

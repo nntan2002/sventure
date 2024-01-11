@@ -9,13 +9,13 @@ module.exports = ({ env }) => ({
                 port: 465,
                 secure: true,
                 auth: {
-                    user: 'nntan2002@gmail.com',
-                    pass: 'etgzblggduwfftqn',
+                    user: 'digital@bcagroup.net',
+                    pass: 'qqtlhzdvghazhtyk',
                 },
             },
             settings: {
-                defaultFrom: 'nntan2002@gmail.com',
-                defaultReplyTo: 'nntan2002@gmail.com',
+                defaultFrom: 'digital@bcagroup.net',
+                defaultReplyTo: 'digital@bcagroup.net',
             },
         },
     },

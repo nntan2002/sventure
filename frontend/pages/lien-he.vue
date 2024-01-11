@@ -17,7 +17,7 @@
                     <b-row class="justify-content-center ">
                         <b-col md="6" class="mb-4">
                             <div class="group">
-                                <input v-model="form.FullName" type="text" required>
+                                <input v-model="form.FullName" type="text" name="name" id="name" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Họ và tên *</label>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="group">
-                                <input v-model="form.Email" type="text" required>
+                                <input v-model="form.Email" type="email"  name="email" id="email" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Email *</label>
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="group">
-                                <input v-model="form.Phone" type="text" required>
+                                <input v-model="form.Phone" type="text" name="phone" id="phone" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Số điện thoại *</label>

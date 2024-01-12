@@ -4,22 +4,37 @@
   "info": {
     "singularName": "page-about-us",
     "pluralName": "page-about-uses",
-    "displayName": "page AboutUs"
+    "displayName": "page AboutUs",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Banner": {
       "type": "component",
       "repeatable": false,
-      "component": "banner.banner"
+      "component": "banner.banner",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AboutUs": {
       "type": "component",
       "repeatable": false,
-      "component": "about-us.about-us"
+      "component": "about-us.about-us",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

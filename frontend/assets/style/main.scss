@@ -1141,6 +1141,122 @@ section {
             }
         }
     }
+
+    .filter {
+        .box-filter {
+            margin-bottom: 30px;
+
+            .title-item {
+                font-weight: 700;
+                font-size: 18px;
+                color: #000000;
+                margin-bottom: 5px;
+            }
+
+            .content-item {
+
+                input,
+                select {
+                    width: 100%;
+                    border: 0px solid #5A5A5A;
+                    border-bottom: .5px solid #5A5A5A;
+                    height: 40px;
+                }
+
+                input:focus,
+                select:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .btn-filter {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            button {
+                width: 100%;
+                font-weight: 400;
+                font-size: 18px;
+                color: #FFFFFF;
+                height: 50px;
+                border: none;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .danhsachcuahang {
+        .danhsach {
+
+            /* width */
+            ::-webkit-scrollbar {
+                width: 13px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #D9D9D9;
+                box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #FFFFFF;
+                border: 0.5px solid #B8B8B8;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 2px;
+            }
+
+
+            .title-danhsach {
+                margin-bottom: 15px;
+
+                .title {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #000000;
+                }
+
+                .sub-title {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #616161;
+                }
+            }
+
+            .content-danhsach {
+                max-height: 835px;
+                overflow: auto;
+
+
+                .box-danhsach {
+                    padding: 30px 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    border: 0px solid #5A5A5A;
+                    border-top: .5px solid #5A5A5A;
+                    cursor: pointer;
+                    transition: all .5s ease;
+
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+
+                .box-danhsach:hover {}
+            }
+        }
+
+        .map {
+            height: 100%;
+            max-width: 100%;
+
+
+        }
+
+    }
 }
 
 footer {

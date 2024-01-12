@@ -2,7 +2,7 @@
     <section>
         <div class="banner-pages">
             <div class="img-item">
-                <img :src="baseURL + banner?.Image?.data?.attributes?.url" alt="">
+                <img v-if="banner.Image" :src="baseURL + banner?.Image?.data?.attributes?.url" alt="">
             </div>
             <div class="content-item">
                 <b-container>

@@ -17,7 +17,7 @@
                         </div>
                         <div class="content-aboutus mb-4" v-html="about.Content" >
                         </div>
-                        <a :href="about.SlugButton" class="btn-main">
+                        <a v-if="about.SlugButton" :href="about.SlugButton" class="btn-main">
                             <span>
                                 {{ about.TitleButton }}
                                 <i class="fas fa-arrow-right"></i>

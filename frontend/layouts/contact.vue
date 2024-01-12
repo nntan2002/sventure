@@ -3,7 +3,7 @@
         <Header />
         <nuxt />
         <home-page-Building v-if="building" :building="building" />
-        <Footer />
+        <!-- <Footer /> -->
     </div>
 </template>
     

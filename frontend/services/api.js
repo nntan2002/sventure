@@ -19,6 +19,9 @@ export default ($axios) => ({
         return this.basic.getContactPage(query);
     },
 
+    getAboutUsPage(query) {
+        return this.basic.getAboutUsPage(query);
+    },
 
     getServicePage(query) {
         return this.basic.getServicePage(query);

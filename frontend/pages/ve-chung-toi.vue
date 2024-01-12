@@ -1,5 +1,6 @@
 <template>
     <div>
+        <item-Banner v-if="banner" :banner="banner" />
         <About-us v-if="about" :about="about" />
     </div>
 </template>
@@ -13,40 +14,24 @@ export default {
         return {
             baseURL: this.$axios.defaults.baseURL,
             locale: this.$i18n.locale || 'vi',
-            banner: [],
-            features: [],
+            banner: null,
             about: null,
-            about2: null,
-            category_services: null,
-            posts: null,
-            TitlePost: null,
-            TitleService: null,
         }
     },
     mounted() {
         const query = qs.stringify(
             {
                 populate: {
-                    Banners: true,
-                    Features: {
+                    Banner: {
                         populate: {
                             Image: true,
-                        }
+                        },
                     },
                     AboutUs: {
                         populate: {
                             Image: true,
                         }
                     },
-                    category_services: {
-                        populate: {
-                            HoverThumbnail: true,
-                            Thumbnail: true,
-                        }
-                    },
-                    posts: {
-                        populate: '*',
-                    }
                 },
                 sort: { publishedAt: 'desc' },
                 publicationState: 'live',
@@ -57,47 +42,15 @@ export default {
             }
         )
 
-        const query1 = qs.stringify(
-            {
-                populate: {
-                    Images: true,
-                },
-                sort: { publishedAt: 'desc' },
-                publicationState: 'live',
-                locale: this.$i18n.locale || 'vi',
-            },
-            {
-                encodeValuesOnly: true, // prettify url
-            }
-        )
-
-        this.getHomePage(query)
-        this.getSectionPartners(query1)
-
+        this.getAboutUsPage(query)
     },
     methods: {
-        getHomePage(params) {
+        getAboutUsPage(params) {
             this.$api
-                .getHomePage(params)
+                .getAboutUsPage(params)
                 .then((data) => {
-                    this.banner = data.data.attributes.Banners.data
-                    this.features = data.data.attributes.Features
-                    this.about = data.data.attributes.AboutUs
-                    this.category_services = data.data.attributes.category_services.data
-                    this.posts = data.data.attributes.posts.data
-                    this.TitlePost = data.data.attributes.TitlePost
-                    this.TitleService = data.data.attributes.TitleService
-                    console.log(data.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-        },
-        getSectionPartners(params) {
-            this.$api
-                .getSectionPartners(params)
-                .then((data) => {
-                    this.about2 = data.data.attributes || []
+                    this.banner = data.data.attributes.Banner || null
+                    this.about = data.data.attributes.AboutUs || null
                 })
                 .catch((error) => {
                     console.log(error)

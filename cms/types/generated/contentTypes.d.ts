@@ -1094,13 +1094,29 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     singularName: 'page-about-us';
     pluralName: 'page-about-uses';
     displayName: 'page AboutUs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Banner: Attribute.Component<'banner.banner'>;
-    AboutUs: Attribute.Component<'about-us.about-us'>;
+    Banner: Attribute.Component<'banner.banner'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AboutUs: Attribute.Component<'about-us.about-us'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1116,6 +1132,12 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page-about-us.page-about-us',
+      'oneToMany',
+      'api::page-about-us.page-about-us'
+    >;
+    locale: Attribute.String;
   };
 }
 

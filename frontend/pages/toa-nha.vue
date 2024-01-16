@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <item-Banner v-if="banner" :banner="banner" />
         <section class="section-padding">
             <b-container>
@@ -99,6 +99,7 @@
 <script>
 const qs = require('qs');
 export default {
+    layout: 'building',
     data() {
         return {
             selectedTinh: null,
@@ -3965,7 +3966,7 @@ export default {
                     sort: { publishedAt: 'desc' },
                     publicationState: 'live',
                 })
-            }else if (this.nameHuyen === null && this.showTinh.length === 0) {
+            } else if (this.nameHuyen === null && this.showTinh.length === 0) {
                 query = qs.stringify({
                     populate: [
                         '*',
@@ -3979,7 +3980,7 @@ export default {
 
         },
         getHomepage() { },
-        getStores(){},
+        getStores() { },
     }
 }
 

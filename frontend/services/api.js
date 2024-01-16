@@ -58,4 +58,8 @@ export default ($axios) => ({
     getPost(payload) {
         return this.basic.getPost(payload)
     },
+
+    getService(payload) {
+        return this.basic.getService(payload)
+    },
 });

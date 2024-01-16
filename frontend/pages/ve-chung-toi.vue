@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <item-Banner v-if="banner" :banner="banner" />
         <About-us v-if="about" :about="about" />
     </div>
@@ -7,7 +7,7 @@
 <script>
 const qs = require('qs')
 export default {
-    name: 'IndexPage',
+    name: 'AboutPage',
     layout: 'default',
 
     data() {

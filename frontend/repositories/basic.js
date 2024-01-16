@@ -11,6 +11,7 @@ const contactSection = '/api/section-contact';
 
 const categoryService = '/api/category-services';
 const post = '/api/posts';
+const service = '/api/services';
 
 
 const contact = '/api/contact/addContact';
@@ -67,6 +68,10 @@ export default ($axios) => ({
 
     getPost(query) {
         return this.getData(post, query)
+    },
+
+    getService(query) {
+        return this.getData(service, query)
     },
 
 

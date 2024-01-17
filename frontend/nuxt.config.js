@@ -15,6 +15,7 @@ export default {
         content: 'Sventure - Tương lai của doanh nhân Việt',
       },
       {
+        hid: 'og:image',
         property: 'og:image',
         content: '/logo-sventure-12.png',
       },

@@ -9,18 +9,15 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
         name: 'description',
         content: 'Sventure - Tương lai của doanh nhân Việt'
       },
       { name: 'format-detection', content: 'telephone=no' },
       {
-        hid: 'og:description',
         property: 'og:description',
         content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
       },
       {
-        hid: 'og:image',
         property: 'og:image',
         content: 'https://sventure.vn/logo-sventure-12.png',
       },

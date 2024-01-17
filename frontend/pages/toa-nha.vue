@@ -100,6 +100,26 @@
 const qs = require('qs');
 export default {
     layout: 'building',
+
+    head: {
+        meta: [
+            {
+                hid: 'og:title',
+                property: 'og:title',
+                content: 'Sventure - Văn phòng',
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: '/logo-sventure-12.png',
+            },
+        ]
+    },
     data() {
         return {
             selectedTinh: null,

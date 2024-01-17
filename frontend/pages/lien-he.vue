@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="group">
-                                <input v-model="form.Email" type="email"  name="email" id="email" required>
+                                <input v-model="form.Email" type="email" name="email" id="email" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Email *</label>
@@ -89,6 +89,26 @@ const qs = require('qs')
 export default {
     name: 'Contact',
     layout: 'contact',
+
+    head: {
+        meta: [
+            {
+                hid: 'og:title',
+                property: 'og:title',
+                content: 'Sventure - Liên hệ',
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: '/logo-sventure-12.png',
+            },
+        ]
+    },
 
     data() {
         return {

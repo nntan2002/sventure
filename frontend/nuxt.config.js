@@ -13,15 +13,6 @@ export default {
         content: 'Sventure - Tương lai của doanh nhân Việt'
       },
       { name: 'format-detection', content: 'telephone=no' },
-      {
-        property: 'og:description',
-        content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: '/logo-sventure-12.png',
-      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo-sventure-06.png' },

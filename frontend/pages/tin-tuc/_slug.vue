@@ -86,7 +86,7 @@ export default {
 
     head() {
         return {
-            title: this.postData.Title || '',
+            title: this.postData.Title + ' - Tin Tức' || '',
             meta: [
                 {
                     property: 'og:image',

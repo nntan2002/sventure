@@ -3,9 +3,9 @@
     <home-page-Banner v-if="banner" :banner="banner" />
     <home-page-Features v-if="features" :features="features" />
     <About-us v-if="about" :about="about" />
-    <home-page-Services v-if="category_services" :category_services="category_services" :title="TitleService"/>
+    <home-page-Services v-if="category_services" :category_services="category_services" :title="TitleService" />
     <Partners v-if="about2" :partners="about2" />
-    <home-page-News v-if="posts" :posts="posts" :title="TitlePost"/>
+    <home-page-News v-if="posts" :posts="posts" :title="TitlePost" />
   </div>
 </template>
 
@@ -15,6 +15,25 @@ export default {
   name: 'IndexPage',
   layout: 'default',
 
+  head: {
+    meta: [
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Sventure',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/logo-sventure-12.png',
+      },
+    ]
+  },
   data() {
     return {
       baseURL: this.$axios.defaults.baseURL,
@@ -50,7 +69,7 @@ export default {
               Thumbnail: true,
             }
           },
-          posts:{
+          posts: {
             populate: '*',
           }
         },

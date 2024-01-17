@@ -10,7 +10,7 @@
                             <div class="mb-4"></div>
                         </b-col>
                     </b-row>
-                    <div v-if="dataNews" class="content-section" >
+                    <div v-if="dataNews" class="content-section">
                         <b-row>
                             <b-col v-for="item in dataNews" :key="item.id" sm="6" md="4" class="mt-4">
                                 <a :href="'tin-tuc/' + item.attributes.Slug">
@@ -44,6 +44,25 @@ export default {
     name: 'News',
     layout: 'default',
 
+    head: {
+        meta: [
+            {
+                hid: 'og:title',
+                property: 'og:title',
+                content: 'Sventure - Tin tức',
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: '/logo-sventure-12.png',
+            },
+        ]
+    },
     data() {
         return {
             baseURL: this.$axios.defaults.baseURL,

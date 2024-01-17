@@ -89,26 +89,32 @@ export default {
             title: this.postData.Title || '',
             meta: [
                 {
+                    hid: 'og:image',
                     property: 'og:image',
                     content: this.postShareImage
                 },
                 {
+                    hid: 'og:title',
                     property: 'og:title',
                     content: this.postData?.Seo?.title || '',
                 },
                 {
+                    hid: 'og:description',
                     property: 'og:description',
                     content: this.postData?.Seo?.description || '',
                 },
                 {
+                    hid: 'og:card',
                     property: 'twitter:card',
                     content: this.postShareImage
                 },
                 {
+                    hid: 'og:title',
                     property: 'twitter:title',
                     content: this.postData?.Seo?.title || '',
                 },
                 {
+                    hid: 'twitter:description',
                     property: 'twitter:description',
                     content: this.postData?.Seo?.description || '',
                 },

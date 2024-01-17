@@ -10,7 +10,18 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Sventure - Tương lai của doanh nhân Việt' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'description', content: 'Tương lai của doanh nhân Việt' },
+      {
+        property: 'og:description',
+        content: 'Sventure - Tương lai của doanh nhân Việt',
+      },
+      {
+        property: 'og:image',
+        content: 'https://cms.sventure.vn/uploads/logo_sventure_12_4f1a08e59c.png',
+      },
+      {
+        property: 'og:url',
+        content: 'https://sventure.vn',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo-sventure-06.png' },

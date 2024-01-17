@@ -18,6 +18,7 @@ export default {
         content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
       },
       {
+        hid: 'og:image',
         property: 'og:image',
         content: '/logo-sventure-12.png',
       },

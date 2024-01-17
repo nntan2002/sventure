@@ -89,7 +89,6 @@ export default {
             title: this.postData.Title || '',
             meta: [
                 {
-                    hid: 'og:image',
                     property: 'og:image',
                     content: this.postShareImage
                 },

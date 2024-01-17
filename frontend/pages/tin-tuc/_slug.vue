@@ -108,11 +108,6 @@ export default {
                     property: 'twitter:card',
                     content: this.postShareImage
                 },
-                // {
-                //     hid: 'og:title',
-                //     property: 'twitter:title',
-                //     content: this.postData?.Seo?.title || '',
-                // },
                 {
                     hid: 'twitter:description',
                     property: 'twitter:description',

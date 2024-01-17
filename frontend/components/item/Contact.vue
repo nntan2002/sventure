@@ -3,8 +3,8 @@
         <div class="contact-home">
             <b-container>
                 <div class="content-section">
-                    <div class="content-item">
-                        <div class="title-section">
+                    <div class="content-item text-white">
+                        <div class="title-section ">
                             {{ contact.TitleSection }}
                         </div>
                         <p>

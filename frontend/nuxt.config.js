@@ -17,12 +17,12 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Không chỉ đem lại dịch vụ như giải pháp mà còn chính là một "người bạn" theo dõi hỗ trợ bạn xuyên suốt giai đoạn đầu hành trình kinh doanh của bạn.'
+        content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/logo-sventure-12.png',
+        content: 'https://sventure.vn/logo-sventure-12.png',
       },
     ],
     link: [

@@ -16,7 +16,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: 'https://cms.sventure.vn/uploads/logo_sventure_12_4f1a08e59c.png',
+        content: '/logo-sventure-12.png',
       },
       {
         property: 'og:url',

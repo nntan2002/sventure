@@ -19,7 +19,7 @@ export default {
       },
       {
         property: 'og:image',
-        content: 'https://sventure.vn/logo-sventure-12.png',
+        content: '/logo-sventure-12.png',
       },
     ],
     link: [

@@ -8,21 +8,21 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      // { hid: 'description', name: 'description', content: 'Sventure - Tương lai của doanh nhân Việt' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Sventure - Tương lai của doanh nhân Việt'
+      },
       { name: 'format-detection', content: 'telephone=no' },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Sventure - Tương lai của doanh nhân Việt',
+        content: 'Không chỉ đem lại dịch vụ như giải pháp mà còn chính là một "người bạn" theo dõi hỗ trợ bạn xuyên suốt giai đoạn đầu hành trình kinh doanh của bạn.'
       },
       {
         hid: 'og:image',
         property: 'og:image',
         content: '/logo-sventure-12.png',
-      },
-      {
-        property: 'og:url',
-        content: 'https://sventure.vn',
       },
     ],
     link: [

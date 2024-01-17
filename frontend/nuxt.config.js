@@ -11,6 +11,7 @@ export default {
       { hid: 'description', name: 'description', content: 'Sventure - Tương lai của doanh nhân Việt' },
       { name: 'format-detection', content: 'telephone=no' },
       {
+        hid: 'og:description',
         property: 'og:description',
         content: 'Sventure - Tương lai của doanh nhân Việt',
       },

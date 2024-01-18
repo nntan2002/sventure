@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <item-Banner title="Services" />
+        <item-Banner v-if="banner" :banner="banner" />
         <section class="section-padding">
             <b-container>
                 <div class="service">
@@ -53,7 +53,7 @@ export default {
     data() {
         return {
             baseURL: this.$axios.defaults.baseURL,
-            banner: [],
+            banner: null,
         }
     },
     mounted() {

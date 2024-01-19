@@ -62,4 +62,8 @@ export default ($axios) => ({
     getService(payload) {
         return this.basic.getService(payload)
     },
+
+    getBuildingPage(payload) {
+        return this.basic.getBuildingPage(payload)
+    },
 });

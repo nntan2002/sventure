@@ -95,6 +95,13 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <div class="language">
+                                <a href="#">VN</a>
+                                /
+                                <a href="#">EN</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 

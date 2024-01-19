@@ -10,7 +10,7 @@
                                 <b-col>
                                     <div class="box-filter">
                                         <div class="title-item">
-                                            Tìm kiếm cửa hàng
+                                            Tìm kiếm chi nhánh
                                         </div>
                                         <div class="content-item">
                                             <input type="text" name="" id="" placeholder="Tên cửa hàng, địa chỉ...">
@@ -3914,18 +3914,25 @@ export default {
         }
     },
     mounted() {
-        const query = qs.stringify({
-            populate: [
-                '*',
-            ],
-            sort: { publishedAt: 'desc' },
-            publicationState: 'live',
-        },
+        const query1 = qs.stringify(
+            {
+                populate: {
+                    Banner: {
+                        populate: {
+                            Image: true,
+                        },
+                    }
+                },
+                sort: { publishedAt: 'desc' },
+                publicationState: 'live',
+                locale: this.$i18n.locale || 'vi',
+            },
             {
                 encodeValuesOnly: true, // prettify url
-            })
+            }
+        )
 
-        this.getHomepage(query)
+        this.getBuildingPage(query1)
     },
     methods: {
         changeLocation() {
@@ -3999,9 +4006,21 @@ export default {
             this.getStores(query)
 
         },
-        getHomepage() { },
         getStores() { },
-    }
+
+        getBuildingPage(params) {
+            this.$api
+                .getBuildingPage(params)
+                .then((data) => {
+                    this.banner = data.data?.attributes?.Banner || null
+                    this.infor = data.data.attributes || null
+                    console.log(this.infor)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+    },
 }
 
 </script>

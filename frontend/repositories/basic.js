@@ -4,6 +4,7 @@ const contactPage = '/api/page-contact';
 const servicePage = '/api/page-service';
 const newsPage = '/api/page-news-site';
 const aboutusPage = '/api/page-about-us';
+const buildingPage = '/api/page-building';
 
 const partner = '/api/our-partner';
 const building = '/api/section-building';
@@ -19,6 +20,9 @@ const footer = '/api/footer';
 const menu = '/api/menus/';
 
 export default ($axios) => ({
+    getBuildingPage(query) {
+        return this.getData(buildingPage, query)
+    },
     getAboutUsPage(query) {
         return this.getData(aboutusPage, query)
     },

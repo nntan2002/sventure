@@ -4,7 +4,11 @@ $third-color: #000;
 $dark-color: #000000;
 
 .main {
-    margin-top: 70px;
+    margin-top: 119px;
+
+    @media only screen and (max-width:991px) {
+        margin-top: 68px;
+    }
 }
 
 div {
@@ -46,7 +50,6 @@ header {
                 position: relative;
                 max-width: calc(100% - 100px);
                 width: 100%;
-                margin-left: 20px;
 
                 input {
                     // max-width: 500px;
@@ -108,7 +111,7 @@ header {
                     text-decoration: none;
                     font-weight: 500;
 
-                    &:hover{
+                    &:hover {
                         color: $primary-color;
                     }
                 }
@@ -388,6 +391,23 @@ header {
                     width: 30px;
                     font-size: 20px;
                 }
+            }
+        }
+    }
+
+    .language {
+        width: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+
+            &:hover {
+                color: $primary-color;
             }
         }
     }

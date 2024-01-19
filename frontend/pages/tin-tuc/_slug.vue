@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <item-banner v-if="banner" :banner="banner" />
         <section class="section-padding">
             <b-container>

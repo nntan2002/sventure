@@ -7,12 +7,13 @@ const aboutusPage = '/api/page-about-us';
 const buildingPage = '/api/page-building';
 
 const partner = '/api/our-partner';
-const building = '/api/section-building';
+const buildingSection = '/api/section-building';
 const contactSection = '/api/section-contact';
 
 const categoryService = '/api/category-services';
 const post = '/api/posts';
 const service = '/api/services';
+const building = '/api/buildings';
 
 
 const contact = '/api/contact/addContact';
@@ -51,7 +52,7 @@ export default ($axios) => ({
     },
 
     getSectionBuilding(query) {
-        return this.getData(building, query)
+        return this.getData(buildingSection, query)
     },
 
     getSectionContact(query) {
@@ -76,6 +77,10 @@ export default ($axios) => ({
 
     getService(query) {
         return this.getData(service, query)
+    },
+
+    getBuilding(query) {
+        return this.getData(building, query)
     },
 
 

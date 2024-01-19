@@ -57,6 +57,14 @@
                                         <a :href="item1.attributes.url" :target="item1.attributes.target">
                                             {{ item1.attributes.title }}
                                         </a>
+                                        <ul v-if="item1.attributes.children.data.length > 0" class="sub-menu2">
+                                            <li v-for="item2 in item1.attributes.children.data" :key="item2.title"
+                                                :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                                                <a :href="item2.attributes.url" :target="item2.attributes.target">
+                                                    {{ item2.attributes.title }}
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -91,7 +99,22 @@
                                     :class="item1.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
                                     <a :href="item1.attributes.url" :target="item1.attributes.target">
                                         {{ item1.attributes.title }}
+                                        <span v-if="item1.attributes.children.data.length > 0" @click="clickspan($event)">
+                                            ✚
+                                        </span>
                                     </a>
+                                    <ul v-if="item1.attributes.children.data.length > 0" class="sub-menu">
+                                        <li v-for="item2 in item1.attributes.children.data" :key="item2.title"
+                                            :class="item2.attributes.children.data.length > 0 ? 'has-child-menu-item' : ''">
+                                            <a :href="item2.attributes.url" :target="item2.attributes.target">
+                                                {{ item2.attributes.title }}
+                                                <span v-if="item2.attributes.children.data.length > 0"
+                                                    @click="clickspan($event)">
+                                                    ✚
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -168,7 +191,7 @@ export default {
                 .getMenu(params)
                 .then((data) => {
                     this.menu = data.data[0].attributes.items.data
-                    console.log(this.menu)
+                    // console.log(this.menu)
                 })
                 .catch((error) => {
                     console.log(error)

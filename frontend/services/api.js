@@ -66,4 +66,8 @@ export default ($axios) => ({
     getBuildingPage(payload) {
         return this.basic.getBuildingPage(payload)
     },
+
+    getBuilding(payload) {
+        return this.basic.getBuilding(payload)
+    },
 });

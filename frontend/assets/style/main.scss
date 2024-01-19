@@ -205,6 +205,23 @@ header {
                             display: flex;
                             white-space: nowrap;
                         }
+
+                        .has-child-menu-item {
+                            &>a::after {
+                                content: '▼';
+                                font-size: 12px;
+                                line-height: 18px;
+                                // transition: all .3s ease-in-out;
+                                display: inline-block;
+                                transform: rotate(-90deg);
+                            }
+
+                            &>a:hover {
+                                &::after {
+                                    color: $primary-color;
+                                }
+                            }
+                        }
                     }
 
                     &:hover {
@@ -218,6 +235,37 @@ header {
                         &>.sub-menu {
                             opacity: 1;
                             visibility: visible;
+                        }
+
+                        &>.sub-menu2 {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+
+                    .sub-menu2 {
+                        position: absolute;
+                        min-height: 100%;
+                        min-width: 100%;
+                        top: 0;
+                        left: 100%;
+                        opacity: 0;
+                        transition: all .3s ease-in-out;
+                        visibility: hidden;
+                        background-color: #fff;
+                        box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.5);
+
+
+
+                        li {
+                            display: flex;
+                            white-space: nowrap;
+                        }
+
+                        .has-child-menu-item {
+                            &>a::after {
+                                content: none !important;
+                            }
                         }
                     }
                 }
@@ -1215,13 +1263,13 @@ section {
             }
 
             .content-danhsach {
-                max-height: 835px;
+                max-height: 635px;
                 overflow: auto;
 
 
                 .box-danhsach {
                     padding: 30px 0;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: 400;
                     border: 0px solid #5A5A5A;
                     border-top: .5px solid #5A5A5A;
@@ -1240,8 +1288,12 @@ section {
         .map {
             height: 100%;
             max-width: 100%;
+            min-height: 635px;
 
-
+            iframe {
+                height: 100%;
+                max-width: 100%;
+            }
         }
 
     }

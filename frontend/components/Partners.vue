@@ -1,30 +1,27 @@
 <template>
     <section>
         <div class="partners section-padding">
-            <b-container class="position-relative">
-                <b-row>
-                    <b-col md="12">
-                        <div class="about-info text-center">
-                            <h2 class="title-section mb-4">
-                                {{ partners.TitleSection }}
-                            </h2>
-                            <div class="mb-5">
-                                <p>
-                                    {{ partners.DescriptionSection }}
-                                </p>
-                            </div>
+            <b-container>
+
+                <div class="about-info text-center">
+                    <h2 class="title-section mb-4">
+                        {{ partners.TitleSection }}
+                    </h2>
+                    <div class="mb-5">
+                        <p>
+                            {{ partners.DescriptionSection }}
+                        </p>
+                    </div>
+                </div>
+
+                <swiper v-if="partners.Images.data && partners.Images.data.length" :options="swiperOptions"
+                    class="swiper123">
+                    <swiper-slide v-for="item in partners.Images.data" :key="item.index">
+                        <div class="box-img">
+                            <b-img :src="baseURL + item.attributes.url" class="w-100"></b-img>
                         </div>
-                    </b-col>
-                    <b-col md="12">
-                        <swiper v-if="partners.Images.data && partners.Images.data.length" :options="swiperOptions" class="swiper123">
-                            <swiper-slide v-for="item in partners.Images.data" :key="item.index">
-                                <div class="box-img">
-                                    <b-img :src="baseURL + item.attributes.url" class="w-100"></b-img>
-                                </div>
-                            </swiper-slide>
-                        </swiper>
-                    </b-col>
-                </b-row>
+                    </swiper-slide>
+                </swiper>
             </b-container>
         </div>
     </section>

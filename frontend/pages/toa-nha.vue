@@ -64,24 +64,24 @@
                         </b-col>
                     </b-row>
                 </div>
-                <!-- <div class="danhsachcuahang">
+                <div class="danhsachcuahang">
                     <b-row cols="1" cols-md="2">
                         <b-col>
                             <div class="danhsach">
                                 <div class="title-danhsach">
                                     <div class="title">Hiển thị tất cả</div>
-                                    <div class="sub-title" v-if="storearr">{{ storearr.length }} cửa hàng</div>
+                                    <div class="sub-title" v-if="storearr">{{ storearr.length }} chi nhánh</div>
                                 </div>
                                 <div class="content-danhsach" v-if="storearr">
                                     <div class="box-danhsach" v-for="(item, index) in storearr" :key="index"
-                                        @click="changeMap(item.attributes.map)">
-                                        <strong>{{ item.attributes.name }}</strong><br />
-                                        {{ item.attributes.street }}, {{ item.attributes.district }}, {{
-                                            item.attributes.city }}
+                                        @click="changeMap(item.attributes.Map)">
+                                        <strong>{{ item.attributes.Name }}</strong><br />
+                                        {{ item.attributes.Street }}, {{ item.attributes.District }}, {{
+                                            item.attributes.City }}
                                         <br />
-                                        <strong> Điện thoại: </strong>{{ item.attributes.phone }}<br />
-                                        <strong>Email:</strong> {{ item.attributes.email }}<br />
-                                        <strong> Giờ hoạt động:</strong> {{ item.attributes.activeTime }}
+                                        <strong> Điện thoại: </strong>{{ item.attributes.Phone }}<br />
+                                        <strong>Email:</strong> {{ item.attributes.Email }}<br />
+                                        <strong> Giờ hoạt động:</strong> {{ item.attributes.ActiveTime }}
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                             </div>
                         </b-col>
                     </b-row>
-                </div> -->
+                </div>
             </b-container>
         </section>
     </div>
@@ -128,6 +128,7 @@ export default {
             showHuyen: null,
             showTinh: null,
             map: null,
+
             arrhuyen: [
                 {
                     "id_tinh": "01",
@@ -3907,13 +3908,20 @@ export default {
                 {
                     "id_tinh": 96,
                     "name_tinh": "Cà Mau"
-                }
+                },
             ],
             storearr: null,
             banner: null,
         }
     },
     mounted() {
+
+        const query = qs.stringify({
+            populate: '*',
+            sort: { publishedAt: 'desc' },
+            publicationState: 'live',
+        })
+
         const query1 = qs.stringify(
             {
                 populate: {
@@ -3932,9 +3940,17 @@ export default {
             }
         )
 
+        this.getBuilding(query)
         this.getBuildingPage(query1)
     },
     methods: {
+        iframeStyles() {
+            this.frame = this.$refs.iframeContent.contentWindow;
+
+            const style =
+                '.layout__wrapper {width: 100%} '
+            this.frame.postMessage(style, '*');
+        },
         changeLocation() {
             const a = this.selectedTinh
             this.showHuyen = this.arrhuyen.filter(function (freelancer) {
@@ -3954,11 +3970,9 @@ export default {
             if (this.nameHuyen === null && this.showTinh != null) {
                 this.nameTinh = this.showTinh[0]?.name_tinh
                 query = qs.stringify({
-                    populate: [
-                        '*',
-                    ],
+                    populate: '*',
                     filters: {
-                        city: {
+                        City: {
                             $eq: this.nameTinh
                         },
                     },
@@ -3971,14 +3985,12 @@ export default {
             } else if (this.nameHuyen != null && this.showTinh != null) {
                 this.nameTinh = this.showTinh[0]?.name_tinh
                 query = qs.stringify({
-                    populate: [
-                        '*',
-                    ],
+                    populate: '*',
                     filters: {
-                        city: {
+                        City: {
                             $eq: this.nameTinh
                         },
-                        district: {
+                        District: {
                             $eq: this.nameHuyen
                         },
                     },
@@ -3987,9 +3999,7 @@ export default {
                 })
             } else if (this.nameHuyen === null && this.showTinh === null) {
                 query = qs.stringify({
-                    populate: [
-                        '*',
-                    ],
+                    populate: '*',
                     sort: { publishedAt: 'desc' },
                     publicationState: 'live',
                 })
@@ -4003,18 +4013,30 @@ export default {
                 })
             }
 
-            this.getStores(query)
+            this.getBuilding(query)
 
         },
-        getStores() { },
-
+        getBuilding(params) {
+            this.$api
+                .getBuilding(params)
+                .then((data) => {
+                    this.storearr = data.data || null
+                    this.map = data.data ? data.data[0].attributes.Map : []
+                    console.log(this.map)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+        changeMap(url) {
+            this.map = url
+        },
         getBuildingPage(params) {
             this.$api
                 .getBuildingPage(params)
                 .then((data) => {
                     this.banner = data.data?.attributes?.Banner || null
                     this.infor = data.data.attributes || null
-                    console.log(this.infor)
                 })
                 .catch((error) => {
                     console.log(error)

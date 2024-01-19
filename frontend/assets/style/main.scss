@@ -229,7 +229,7 @@ header {
 
                     &>a:hover {
                         &::after {
-                            color: #fff;
+                            color: $primary-color;
                         }
                     }
                 }

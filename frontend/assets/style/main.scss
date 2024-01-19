@@ -39,157 +39,17 @@ header {
             border-right: 2px solid rgba($second-color, 0.2);
             padding: 0 20px;
             margin: 0 20px;
-            flex: 2 1 0;
+            flex: 1 2 0;
 
-            .menu-item {
-                cursor: pointer;
-                position: relative;
-                overflow: hidden;
-                padding-bottom: 20px;
-                margin-bottom: -20px;
-                transition: all .3s ease-in-out;
-                font-weight: 600;
-                flex-shrink: 0;
-
-                .icon {
-                    display: flex;
-                    align-items: center;
-                    transition: all .3s ease-in-out;
-
-
-                    svg {
-                        transition: all .3s ease-in-out;
-                        margin-right: 5px;
-                    }
-                }
-
-                &:hover {
-                    overflow: visible;
-
-                    .icon {
-                        color: $primary-color;
-
-                        svg {
-                            fill: $primary-color;
-                        }
-                    }
-
-                    .nav {
-                        top: 100%;
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-
-                .nav {
-                    position: absolute;
-                    width: 150%;
-                    top: 350%;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all .3s ease-in-out;
-
-                    .menu1 {
-                        width: 100%;
-
-                        li {
-                            background-color: rgba($primary-color, 1);
-                            padding: 10px 20px;
-                            overflow: hidden;
-                            transition: all .3s ease-in-out;
-
-
-
-                            a {
-                                color: $dark-color;
-                                font-weight: 600;
-                                transition: all .3s ease-in-out;
-                                display: block;
-                            }
-
-                            .sub-menu {
-                                position: absolute;
-                                min-height: 100%;
-                                min-width: 100%;
-                                top: 0%;
-                                left: 200%;
-                                opacity: 0;
-                                transition: all .3s ease-in-out;
-                                background-color: rgba($primary-color, 5);
-                                visibility: hidden;
-
-
-                                li {
-                                    display: flex;
-                                    white-space: nowrap;
-                                }
-                            }
-
-                            &:hover {
-                                overflow: visible;
-                                background-color: rgba(#000, 1);
-                                visibility: visible;
-
-                                &>a {
-                                    color: #fff;
-                                }
-
-                                &>.sub-menu {
-                                    opacity: 1;
-                                    visibility: visible;
-                                    left: 100%;
-
-                                    li {
-                                        background-color: rgba(#000, 0);
-
-                                        &:hover {
-                                            background-color: rgba(#000, 1);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        .has-child-menu-item {
-                            &>a::after {
-                                content: '\1F892';
-                                position: absolute;
-                                right: 10px;
-                                font-size: 30px;
-                                line-height: 18px;
-                                transition: all .3s ease-in-out;
-                            }
-
-                            &>a:hover {
-                                &::after {
-                                    color: #fff;
-                                }
-                            }
-                        }
-
-                    }
-
-                    ul {
-                        list-style: none;
-                        margin-left: 0px;
-                        padding: 0;
-                        margin-bottom: 0;
-
-                        a {
-                            text-decoration: none;
-                        }
-                    }
-                }
-            }
 
             .search {
                 position: relative;
-                max-width: 400px;
+                max-width: calc(100% - 100px);
                 width: 100%;
                 margin-left: 20px;
 
                 input {
-                    max-width: 500px;
+                    // max-width: 500px;
                     width: 100%;
                     height: 50px;
                     overflow: unset;
@@ -237,6 +97,23 @@ header {
                 }
             }
 
+            .language {
+                width: 80px;
+                display: flex;
+                justify-content: space-between;
+                margin-left: 20px;
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                    font-weight: 500;
+
+                    &:hover{
+                        color: $primary-color;
+                    }
+                }
+            }
+
         }
 
         .user {
@@ -277,6 +154,97 @@ header {
             i {
                 transition: all .3s ease-in-out;
                 font-size: 30px;
+            }
+        }
+    }
+
+    .menu-item {
+
+        .nav {
+            transition: all .3s ease-in-out;
+
+            .menu1 {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    position: relative;
+                    padding: 10px 20px 15px 20px;
+                    overflow: hidden;
+                    transition: all .3s ease-in-out;
+
+
+
+                    a {
+                        color: $dark-color;
+                        font-weight: 600;
+                        transition: all .3s ease-in-out;
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .sub-menu {
+                        position: absolute;
+                        min-height: 100%;
+                        min-width: 100%;
+                        top: 100%;
+                        left: 0;
+                        opacity: 0;
+                        transition: all .3s ease-in-out;
+                        visibility: hidden;
+                        background-color: #fff;
+                        box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.5);
+
+
+
+                        li {
+                            display: flex;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    &:hover {
+                        overflow: visible;
+                        visibility: visible;
+
+                        &>a {
+                            color: $primary-color;
+                        }
+
+                        &>.sub-menu {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+
+                .has-child-menu-item {
+                    &>a::after {
+                        content: '▼';
+                        font-size: 12px;
+                        line-height: 18px;
+                        transition: all .3s ease-in-out;
+                    }
+
+                    &>a:hover {
+                        &::after {
+                            color: #fff;
+                        }
+                    }
+                }
+
+            }
+
+            ul {
+                list-style: none;
+                margin-left: 0px;
+                padding: 0;
+                margin-bottom: 0;
+
+                a {
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -370,7 +338,7 @@ header {
                         span {
                             margin-left: 20px;
                             font-weight: 900;
-                            font-size: 18px;
+                            font-size: 15px;
                         }
                     }
                 }

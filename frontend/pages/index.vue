@@ -1,8 +1,7 @@
 <template>
   <div class="main">
     <home-page-Banner v-if="banner" :banner="banner" />
-    <home-page-Features v-if="features" :features="features" />
-    <About-us v-if="about" :about="about" />
+    <About-us v-if="about" :about="about" class="mt-5"/>
     <home-page-Services v-if="category_services" :category_services="category_services" :title="TitleService" />
     <Partners v-if="about2" :partners="about2" />
     <home-page-News v-if="posts" :posts="posts" :title="TitlePost" />

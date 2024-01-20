@@ -1176,59 +1176,6 @@ export interface ApiOurPartnerOurPartner extends Schema.SingleType {
   };
 }
 
-export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
-  collectionName: 'page_about_uses';
-  info: {
-    singularName: 'page-about-us';
-    pluralName: 'page-about-uses';
-    displayName: 'page AboutUs';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    Banner: Attribute.Component<'banner.banner'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    AboutUs: Attribute.Component<'about-us.about-us'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::page-about-us.page-about-us',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::page-about-us.page-about-us',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::page-about-us.page-about-us',
-      'oneToMany',
-      'api::page-about-us.page-about-us'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiPageBuildingPageBuilding extends Schema.SingleType {
   collectionName: 'page_buildings';
   info: {
@@ -1849,7 +1796,6 @@ declare module '@strapi/types' {
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::our-partner.our-partner': ApiOurPartnerOurPartner;
-      'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-building.page-building': ApiPageBuildingPageBuilding;
       'api::page-contact.page-contact': ApiPageContactPageContact;
       'api::page-home.page-home': ApiPageHomePageHome;

@@ -12,8 +12,6 @@ export interface AboutUsAboutUs extends Schema.Component {
     SubTitleContent: Attribute.String;
     Content: Attribute.RichText;
     Image: Attribute.Media;
-    TitleButton: Attribute.String;
-    SlugButton: Attribute.String;
   };
 }
 

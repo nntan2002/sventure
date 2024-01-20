@@ -100,7 +100,7 @@ export default {
             {
                 hid: 'og:description',
                 property: 'og:description',
-                content: 'Tương lai của doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
+                content: 'Tương lai doanh nhân Việt - Giải pháp tổng thể ươm mầm doanh nhân'
             },
             {
                 hid: 'og:image',

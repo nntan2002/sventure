@@ -6,8 +6,8 @@
                 <div class="filter mb-5">
                     <b-row>
                         <b-col md="10">
-                            <b-row cols="1" cols-md="3">
-                                <b-col>
+                            <b-row cols="1" cols-md="2">
+                                <!-- <b-col>
                                     <div class="box-filter">
                                         <div class="title-item">
                                             Tìm kiếm chi nhánh
@@ -16,7 +16,7 @@
                                             <input type="text" name="" id="" placeholder="Tên cửa hàng, địa chỉ...">
                                         </div>
                                     </div>
-                                </b-col>
+                                </b-col> -->
                                 <b-col>
                                     <div class="box-filter">
                                         <div class="title-item">

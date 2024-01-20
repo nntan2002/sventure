@@ -8,7 +8,7 @@
                             <img src="~/assets/images/logo-sventure-01.png" alt="">
                         </nuxt-link>
                     </div>
-                    <div class="menu d-lg-flex d-none">
+                    <div class="menu d-xl-flex d-none">
                         <div class="search">
                             <form action="/tim-kiem">
                                 <input type="text" placeholder="Search.." name="search" required>
@@ -21,7 +21,7 @@
                             <a href="#">EN</a>
                         </div>
                     </div>
-                    <div class="user d-lg-flex d-none">
+                    <div class="user d-xl-flex d-none">
                         <div class="user-item">
                             <a href="/coming-soon" class="login">
                                 <i class="fas fa-user"></i>
@@ -39,11 +39,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="bars-icon d-lg-none" @click="active_siderbar = true">
+                    <div class="bars-icon d-xl-none" @click="active_siderbar = true">
                         <i class="fas fa-bars"></i>
                     </div>
                 </div>
-                <div class="menu-item menu d-lg-block d-none">
+                <div class="menu-item menu d-xl-block d-none">
                     <div class="nav">
                         <ul v-if="menu" class="menu1">
                             <li v-for="item in menu" :key="item.title"

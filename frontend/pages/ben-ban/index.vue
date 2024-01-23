@@ -1,6 +1,34 @@
 <template>
     <div class="main">
+        <section class="sell-section section-padding">
+            <b-container>
+                <b-row>
+                    <b-col lg="3">
 
+                    </b-col>
+                    <b-col lg="9">
+                        <div class="filter d-flex justify-content-between mb-4 w-100">
+                            <div class="count-item">
+                                Hiện 9/35600 kết quả
+                            </div>
+                            <div class="filter-item">
+                                <select>
+                                    <option disabled selected hidden>Sắp xếp hồ sơ theo</option>
+                                    <option value="1">Hồ sơ mới tạo</option>
+                                    <option value="2">Cấp độ đánh giá hồ sơ</option>
+                                </select>
+                                <i class="fas fa-sort-amount-down"></i>
+                            </div>
+                        </div>
+                        <b-row>
+                            <b-col lg="4" v-for="i in 9" :key="i" class="mb-4">
+                                <item-Box-sell />
+                            </b-col>
+                        </b-row>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </section>
     </div>
 </template>
 <script>

@@ -11,10 +11,11 @@ const buildingSection = '/api/section-building';
 const contactSection = '/api/section-contact';
 
 const categoryService = '/api/category-services';
+
 const post = '/api/posts';
 const service = '/api/services';
 const building = '/api/buildings';
-
+const sell ='/api/sells';
 
 const contact = '/api/contact/addContact';
 const footer = '/api/footer';
@@ -73,6 +74,10 @@ export default ($axios) => ({
 
     getPost(query) {
         return this.getData(post, query)
+    },
+
+    getSell(query) {
+        return this.getData(sell, query)
     },
 
     getService(query) {

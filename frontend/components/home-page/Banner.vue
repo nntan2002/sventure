@@ -1,14 +1,19 @@
 <template>
     <section>
         <div class="banner">
-            <swiper ref="bannerSwiper" :options="swiperOptions">
+            <swiper ref="bannerSwiper" :options="swiperOptions" class="swiper-banner">
                 <swiper-slide v-for="(item, index) in banner" :key="index">
-                    <div class="banner-item">
+                    <div class="banner-item" v-if="item.attributes.mime === 'image/jpeg'">
                         <img :src="baseURL + item.attributes.url" :alt="item.attributes.name" />
+                    </div>
+                    <div class="banner-item" v-else>
+                        <video :src="baseURL + item.attributes.url" :alt="item.attributes.name" controls autoplay muted>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </swiper-slide>
             </swiper>
-            <div slot="pagination" class="swiper-pagination bannerslide-pagination" ></div>
+            <div slot="pagination" class="swiper-pagination bannerslide-pagination"></div>
         </div>
     </section>
 </template>
@@ -44,7 +49,6 @@ export default {
                 centeredSlides: true,
                 speed: 1000,
                 slidesPerView: 1,
-                autoHeight: true,
                 pauseOnMouseEnter: true,
                 pagination: {
                     el: ".bannerslide-pagination",
@@ -52,7 +56,7 @@ export default {
                     clickable: true,
                 },
                 autoplay: {
-                    delay: 3000,
+                    delay: 60000,
                     disableOnInteraction: true,
                 },
 

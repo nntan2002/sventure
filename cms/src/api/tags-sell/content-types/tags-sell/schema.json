@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags_sells",
+  "info": {
+    "singularName": "tags-sell",
+    "pluralName": "tags-sells",
+    "displayName": "Tags Sell"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "TitleTag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

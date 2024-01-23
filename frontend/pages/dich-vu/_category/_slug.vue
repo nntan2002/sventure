@@ -86,7 +86,7 @@ export default {
 
     head() {
         return {
-            title: this.postData.Title + ' - Tin Tức' || '',
+            title: this.postData.Title + ' - Dịch Vụ' || '',
             meta: [
                 {
                     property: 'og:image',
@@ -119,9 +119,11 @@ export default {
     computed: {
         changed_post_content() {
             try {
-                return this.post?.data[0]?.attributes?.Content
-                    .split('/uploads/')
+                const a = this.post?.data[0]?.attributes?.Content
+                    .split(this.baseURL).join(``)
+                const b = a.split('/uploads/')
                     .join(`${this.baseURL}/uploads/`)
+                return b
             } catch (error) {
                 console.log(error)
                 return ''

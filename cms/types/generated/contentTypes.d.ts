@@ -1683,6 +1683,103 @@ export interface ApiSectionContactSectionContact extends Schema.SingleType {
   };
 }
 
+export interface ApiSellSell extends Schema.CollectionType {
+  collectionName: 'sells';
+  info: {
+    singularName: 'sell';
+    pluralName: 'sells';
+    displayName: 'sell';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slug: Attribute.UID<'api::sell.sell', 'Title'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    MainJob: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ChatLuong: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<{
+        min: 0;
+        max: 5;
+      }> &
+      Attribute.DefaultTo<0>;
+    Price: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    tags_sell: Attribute.Relation<
+      'api::sell.sell',
+      'oneToOne',
+      'api::tags-sell.tags-sell'
+    >;
+    InformationItem: Attribute.Component<'information.information', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Imagethumbnail: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ImageSlider: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::sell.sell', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::sell.sell', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::sell.sell',
+      'oneToMany',
+      'api::sell.sell'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -1772,6 +1869,52 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiTagsSellTagsSell extends Schema.CollectionType {
+  collectionName: 'tags_sells';
+  info: {
+    singularName: 'tags-sell';
+    pluralName: 'tags-sells';
+    displayName: 'Tags Sell';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    TitleTag: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tags-sell.tags-sell',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tags-sell.tags-sell',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::tags-sell.tags-sell',
+      'oneToMany',
+      'api::tags-sell.tags-sell'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1804,7 +1947,9 @@ declare module '@strapi/types' {
       'api::post.post': ApiPostPost;
       'api::section-building.section-building': ApiSectionBuildingSectionBuilding;
       'api::section-contact.section-contact': ApiSectionContactSectionContact;
+      'api::sell.sell': ApiSellSell;
       'api::service.service': ApiServiceService;
+      'api::tags-sell.tags-sell': ApiTagsSellTagsSell;
     }
   }
 }

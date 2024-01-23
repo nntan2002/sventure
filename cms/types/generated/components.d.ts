@@ -49,6 +49,17 @@ export interface FeatureFeature extends Schema.Component {
   };
 }
 
+export interface InformationInformation extends Schema.Component {
+  collectionName: 'components_information_information';
+  info: {
+    displayName: 'Information';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.String;
+  };
+}
+
 export interface MenuFooterMenuFooter extends Schema.Component {
   collectionName: 'components_menu_footer_menu_footers';
   info: {
@@ -143,6 +154,7 @@ declare module '@strapi/types' {
       'banner.banner-single': BannerBannerSingle;
       'banner.banner': BannerBanner;
       'feature.feature': FeatureFeature;
+      'information.information': InformationInformation;
       'menu-footer.menu-footer': MenuFooterMenuFooter;
       'menu-footer.menu-item': MenuFooterMenuItem;
       'shared.meta-social': SharedMetaSocial;

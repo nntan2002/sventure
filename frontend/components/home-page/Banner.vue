@@ -7,7 +7,7 @@
                         <img :src="baseURL + item.attributes.url" :alt="item.attributes.name" />
                     </div>
                     <div class="banner-item" v-else>
-                        <video :src="baseURL + item.attributes.url" :alt="item.attributes.name" controls autoplay muted>
+                        <video :src="baseURL + item.attributes.url" :alt="item.attributes.name" autoplay muted>
                             Your browser does not support the video tag.
                         </video>
                     </div>

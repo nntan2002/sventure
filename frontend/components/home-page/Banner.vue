@@ -13,7 +13,7 @@
                     </div>
                 </swiper-slide>
             </swiper>
-            <div slot="pagination" class="swiper-pagination bannerslide-pagination" v-if="banner.length < 2"></div>
+            <div slot="pagination" class="swiper-pagination bannerslide-pagination" v-if="banner.length > 1"></div>
         </div>
     </section>
 </template>

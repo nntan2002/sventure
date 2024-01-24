@@ -1,11 +1,11 @@
 <template>
-    <a href="#" class="box-sell">
+    <a :href="'/ben-ban/' + data.attributes.Slug" class="box-sell">
         <div class="title-box">
             <div class="image">
-                <img src="https://cms.sventure.vn/uploads/8896ed29_4112_4521_89a6_d43391c83bab_345ad6ca12.jpg" alt="">
+                <img :src="baseURL + data.attributes.Imagethumbnail.data.attributes.url" alt="">
             </div>
             <div class="title">
-                Bán doanh nghiệp - Hoạt động xây dựng chuyên dụng
+                {{ data.attributes.Title }}
             </div>
         </div>
         <div class="content-box">
@@ -13,9 +13,7 @@
                 <div class="title-item">
                     Thông tin cơ bản
                 </div>
-                <div class="content-item">
-                    ➢ Overview, vision, mission
-                    Vision: Become the leading branding corporation in Vietnam, Cooperate w...
+                <div class="content-item" v-html="data.attributes.Description">
                 </div>
             </div>
             <div class="item-content">
@@ -23,16 +21,15 @@
                     Ngành nghề chính
                 </div>
                 <div class="content-item">
-                    Hoạt động xây dựng chuyên dụng
+                    {{ data.attributes.MainJob }}
                 </div>
             </div>
         </div>
-        <div class="star-box">
-            <i class="fas fa-star active"></i>
-            <i class="fas fa-star active"></i>
-            <i class="fas fa-star active"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+        <div class="star-box d-flex">
+            <div v-for="item in 5" :key="item">
+                <i class="fas fa-star active" v-if="item <= data.attributes.ChatLuong"></i>
+                <i class="fas fa-star" v-else></i>
+            </div>
         </div>
         <div class="price-box">
             <div class="price-item">
@@ -40,7 +37,7 @@
                     Giá trị cần bán
                 </div>
                 <div class="content-item">
-                    500.000.000 VND
+                    {{ data.attributes.Price }}
                 </div>
             </div>
             <div class="price-item">
@@ -51,3 +48,23 @@
         </div>
     </a>
 </template>
+
+<script>
+export default {
+    props: {
+        data: {
+            type: Object,
+            default: () => null,
+        },
+    },
+    data() {
+        return {
+            baseURL: this.$axios.defaults.baseURL,
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+}
+</script>

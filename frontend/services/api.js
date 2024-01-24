@@ -55,6 +55,10 @@ export default ($axios) => ({
         return this.basic.getCategoryService(payload)
     },
 
+    getTagSell(payload) {
+        return this.basic.getTagSell(payload)
+    },
+
     getPost(payload) {
         return this.basic.getPost(payload)
     },

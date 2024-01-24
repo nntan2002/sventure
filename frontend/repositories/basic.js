@@ -11,6 +11,7 @@ const buildingSection = '/api/section-building';
 const contactSection = '/api/section-contact';
 
 const categoryService = '/api/category-services';
+const tagSell = '/api/tags-sells';
 
 const post = '/api/posts';
 const service = '/api/services';
@@ -70,6 +71,10 @@ export default ($axios) => ({
 
     getCategoryService(query) {
         return this.getData(categoryService, query)
+    },
+
+    getTagSell(query) {
+        return this.getData(tagSell, query)
     },
 
     getPost(query) {

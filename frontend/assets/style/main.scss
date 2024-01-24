@@ -541,16 +541,16 @@ section {
                 aspect-ratio: 16 / 9;
             }
 
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgb(0, 0, 0, 0.3);
-                z-index: 1;
-            }
+            // &::after {
+            //     content: '';
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     width: 100%;
+            //     height: 100%;
+            //     background-color: rgb(0, 0, 0, 0.3);
+            //     z-index: 1;
+            // }
         }
 
         .bannerslide-pagination {
@@ -593,10 +593,21 @@ section {
 
         .img-item {
             img {
-                height: 30vh;
-                min-height: 375px;
+                height: 20vh;
+                min-height: 300px;
                 width: 100%;
                 object-fit: cover;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(0, 0, 0, 0.3);
+                z-index: 1;
             }
         }
 
@@ -609,6 +620,7 @@ section {
             display: flex;
             align-items: center;
             background-color: rgba(0, 0, 0, .5);
+            z-index: 3;
 
             .title-pages {
                 font-size: 40px;
@@ -1411,6 +1423,35 @@ section {
                         color: #fff;
                         font-size: 14px;
                     }
+                }
+            }
+        }
+    }
+
+    .box-filter {
+        .title-box {}
+
+        .content-box {
+            .title-content {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .sell-section {
+        .pagination {
+            .pagination-item {
+                padding: 5px 10px;
+                margin: 0 5px;
+                background-color: rgba($primary-color, .5);
+                color: #fff;
+                font-weight: 700;
+                cursor: pointer;
+
+                &.active {
+                    background-color: rgba($primary-color, 1);
+                    pointer-events: none;
                 }
             }
         }

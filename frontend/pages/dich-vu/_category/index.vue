@@ -7,7 +7,7 @@
                     <b-row class="justify-content-center text-center">
                         <b-col md="12">
                             <h2 class="title-section mb-4">
-                                Sventure
+                                SVenture®
                             </h2>
                             <div class="mb-4">
                                 {{ infor?.Description }}

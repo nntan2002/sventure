@@ -157,6 +157,7 @@ export default {
                     console.log(error)
                 })
         },
+        
         getSell(params) {
             this.$api
                 .getSell(params)

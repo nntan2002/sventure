@@ -23,7 +23,6 @@ export default {
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
-        name: '404',
         path: '*',
         component: resolve(__dirname, 'pages/404.vue'),
       })

@@ -163,22 +163,38 @@ export default {
     },
     mounted() {
         console.log(this.$i18n.locale);
-
-        const query = qs.stringify(
-            {
-                populate: '*',
-                filters: {
-                    slug: 'menu-vi',
+        if (this.$i18n.locale === 'vi') {
+            const query = qs.stringify(
+                {
+                    populate: '*',
+                    filters: {
+                        slug: 'menu-vi',
+                    },
+                    nested: true,
+                    publicationState: 'live',
                 },
-                nested: true,
-                publicationState: 'live',
-            },
-            {
-                encodeValuesOnly: true, // prettify url
-            }
-        )
+                {
+                    encodeValuesOnly: true, // prettify url
+                }
+            )
+            this.getMenu(query)
 
-        this.getMenu(query)
+        } else {
+            const query = qs.stringify(
+                {
+                    populate: '*',
+                    filters: {
+                        slug: 'menu-en',
+                    },
+                    nested: true,
+                    publicationState: 'live',
+                },
+                {
+                    encodeValuesOnly: true, // prettify url
+                }
+            )
+            this.getMenu(query)
+        }
     },
     methods: {
         clickspan(e) {

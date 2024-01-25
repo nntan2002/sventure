@@ -21,7 +21,7 @@
     },
     "description": {
       "type": "string",
-      "maxLength": 65,
+      "maxLength": 165,
       "required": true
     },
     "image": {

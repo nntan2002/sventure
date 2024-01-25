@@ -8,6 +8,7 @@ import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import strapiPluginCkeditor5 from "strapi-plugin-ckeditor5/strapi-admin";
 import menus from "strapi-plugin-menus/strapi-admin";
+import previewButton from "strapi-plugin-preview-button/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 renderAdmin(document.getElementById("strapi"), {
@@ -18,5 +19,6 @@ renderAdmin(document.getElementById("strapi"), {
     "users-permissions": usersPermissions,
     "strapi-plugin-ckeditor5": strapiPluginCkeditor5,
     menus: menus,
+    "preview-button": previewButton,
   },
 });

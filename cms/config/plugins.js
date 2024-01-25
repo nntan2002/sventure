@@ -19,4 +19,26 @@ module.exports = ({ env }) => ({
             },
         },
     },
+
+    'preview-button': {
+        enabled: true,
+        config: {
+            contentTypes: [
+                {
+                    uid: 'api::post.post',
+                    draft: {
+                        url: 'https://sventure.vn/preview-tin-tuc',
+                        type: 'post',
+                        query: {
+                            slug: '{Slug}',
+                        },
+                    },
+                    published: {
+                        url: 'https://sventure.vn/tin-tuc/{Slug}',
+                    },
+                },
+
+            ],
+        },
+    },
 });

@@ -103,9 +103,18 @@ export default {
                     content: this.postData?.Seo?.description || '',
                 },
                 {
-                    hid: 'og:card',
-                    property: 'twitter:card',
+                    property: 'twitter:image',
                     content: this.postShareImage
+                },
+                {
+                    hid: 'twitter:title',
+                    property: 'twitter:title',
+                    content: this.postData?.Seo?.title || '',
+                },
+                {
+                    hid: 'twitter:card',
+                    property: 'twitter:card',
+                    content: 'summary_large_image',
                 },
                 {
                     hid: 'twitter:description',

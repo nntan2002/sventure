@@ -9,13 +9,13 @@
                             {{ formatDate }}
                         </div>
                         <div class="share-icon">
-                            <a :href="'https://www.facebook.com/share.php?u=' + banner.urlShare">
+                            <a :href="'https://www.facebook.com/share.php?u=' + banner?.urlShare">
                                 <img src="~/assets/images/facebook.jpg" alt="">
                             </a>
                             <a href="#">
                                 <img src="~/assets/images/instagram.jpg" alt="">
                             </a>
-                            <a :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + banner.urlShare">
+                            <a :href="'https://www.linkedin.com/sharing/share-offsite/?url=' + banner?.urlShare">
                                 <img src="~/assets/images/linkedIn.jpg" alt="">
                             </a>
                         </div>

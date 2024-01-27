@@ -18,8 +18,8 @@
                                 :href="'tin-tuc/' + item.attributes.Slug">
                                 <div class="box-news">
                                     <div class="img-box">
-                                        <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"
-                                            :alt="item.attributes.Thumbnail.data.attributes.name">
+                                        <img :src="baseURL + item?.attributes?.Thumbnail?.data?.attributes?.url"
+                                            :alt="item?.attributes?.Thumbnail?.data?.attributes?.name">
                                     </div>
                                     <div class="content-box">
                                         <div class="title my-3">

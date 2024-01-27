@@ -16,8 +16,8 @@
                             <nuxt-link :to="'/dich-vu/' + item.attributes.Slug">
                                 <div class="box-services">
                                     <div class="img-box">
-                                        <b-img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"></b-img>
-                                        <b-img :src="baseURL + item.attributes.HoverThumbnail.data.attributes.url"></b-img>
+                                        <b-img :src="baseURL + item?.attributes?.Thumbnail?.data?.attributes?.url"></b-img>
+                                        <b-img :src="baseURL + item?.attributes?.HoverThumbnail?.data?.attributes?.url"></b-img>
                                     </div>
                                     <div class="content-box">
                                         <h4 class="title my-4">

@@ -20,7 +20,7 @@
                     </b-col>
                     <b-col md="5">
                         <div class="image-aboutus">
-                            <img :src="baseURL + about.Image.data.attributes.url" alt="">
+                            <img :src="baseURL + about?.Image?.data?.attributes?.url" alt="">
                         </div>
                     </b-col>
                 </b-row>

@@ -4,7 +4,7 @@
             <div class="container">
                 <b-row>
                     <b-col md="5">
-                        <div class="logo-footer">
+                        <div v-if="footer.LogoFooter.data.attributes.url" class="logo-footer">
                             <img :src="baseURL + footer.LogoFooter.data.attributes.url" alt="">
                         </div>
                         <div class="content-footer">

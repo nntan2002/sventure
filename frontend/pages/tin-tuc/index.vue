@@ -16,7 +16,7 @@
                                 <a :href="'tin-tuc/' + item.attributes.Slug">
                                     <div class="box-news">
                                         <div class="img-box">
-                                            <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url" alt="">
+                                            <img :src="baseURL + item?.attributes?.Thumbnail?.data?.attributes?.url" alt="">
                                         </div>
                                         <div class="content-box">
                                             <div class="title my-3">

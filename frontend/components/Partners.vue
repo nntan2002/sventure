@@ -17,7 +17,7 @@
                 <swiper v-if="partners.Images.data && partners.Images.data.length" :options="swiperOptions"
                     class="swiper123">
                     <swiper-slide v-for="item in partners.Images.data" :key="item.index">
-                        <div class="box-img">
+                        <div class="box-img" v-if="item.attributes.url">
                             <b-img :src="baseURL + item.attributes.url" class="w-100"></b-img>
                         </div>
                     </swiper-slide>
@@ -59,11 +59,11 @@ export default {
                     },
                     768: {
                         slidesPerView: 3,
-                        spaceBetween: 40,
+                        spaceBetween: 20,
                     },
                     992: {
-                        slidesPerView: 4,
-                        spaceBetween: 50,
+                        slidesPerView: 3,
+                        spaceBetween: 30,
                     },
                 },
                 autoplay: {

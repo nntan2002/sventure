@@ -15,7 +15,7 @@ div {
     position: relative;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
@@ -1334,14 +1334,16 @@ section {
             align-items: center;
             border-bottom: 1px solid rgba($third-color, .3);
             padding: 5px 0px;
+            flex-wrap: wrap;
 
 
             .image {
                 margin-right: 10px;
+                flex: 40px;
 
                 img {
-                    width: 48px;
-                    height: 48px;
+                    width: 40px;
+                    height: 40px;
                     border-radius: 50%;
                 }
             }
@@ -1354,6 +1356,7 @@ section {
                 line-clamp: 2;
                 -webkit-box-orient: vertical;
                 font-weight: 700;
+                flex: calc(100% - 50px);
             }
         }
 
@@ -1434,6 +1437,8 @@ section {
     }
 
     .box-filter {
+        top: 140px;
+
         .title-box {}
 
         .content-box {

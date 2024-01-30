@@ -5,32 +5,34 @@
                 <b-container>
                     <b-row>
                         <b-col lg="3">
-                            <div class="box-filter position-sticky" style="top: 120px">
+                            <div class="box-filter position-sticky">
                                 <div class="title-box">
 
                                 </div>
-                                <div class="content-box" v-if="tagsellArr">
+                                <div v-if="tagsellArr" class="content-box">
                                     <div class="title-content mb-3">
                                         Phân loại giao dịch
                                     </div>
                                     <div class="item">
-                                        <input type="radio" name="filter" :value="null" v-model="filterRadio">
+                                        <input v-model="filterRadio" :value="null" type="radio" name="filter">
                                         <label for="filter">Tất cả các giao dịch</label>
                                     </div>
-                                    <div class="item" v-for="item in tagsellArr" :key="item.id">
-                                        <input type="radio" name="filter" :value="item.attributes.TitleTag"
-                                            v-model="filterRadio">
+                                    <div v-for="item in tagsellArr" :key="item.id" class="item">
+                                        <input v-model="filterRadio" :value="item.attributes.TitleTag" type="radio"
+                                            name="filter">
                                         <label for="filter">{{ item.attributes.TitleTag }}</label>
                                     </div>
                                 </div>
                             </div>
                         </b-col>
                         <b-col lg="9">
-                            <div class="filter-name mb-4" v-if="filterRadio">
-                                <div class="item">{{ filterRadio }}</div>
+                            <div v-if="filterRadio" class="filter-name mb-4">
+                                <div class="item">
+                                    {{ filterRadio }}
+                                </div>
                             </div>
                             <div class="filter d-flex justify-content-between mb-4 w-100">
-                                <div class="count-item" v-if="sellArr">
+                                <div v-if="sellArr" class="count-item">
                                     Hiện {{ sellArr.length + '/' + totalsell }} kết quả
                                 </div>
                                 <div class="filter-item">
@@ -72,6 +74,16 @@ const qs = require('qs')
 export default {
     name: 'IndexPage',
     layout: 'default',
+    data() {
+        return {
+            baseURL: this.$axios.defaults.baseURL,
+            locale: this.$i18n.locale || 'vi',
+            tagsellArr: null,
+            sellArr: null,
+            totalsell: 0,
+            filterRadio: null,
+        }
+    },
 
     head: {
         meta: [
@@ -92,16 +104,7 @@ export default {
             },
         ]
     },
-    data() {
-        return {
-            baseURL: this.$axios.defaults.baseURL,
-            locale: this.$i18n.locale || 'vi',
-            tagsellArr: null,
-            sellArr: null,
-            totalsell: 0,
-            filterRadio: null,
-        }
-    },
+
     mounted() {
 
         const query = qs.stringify(
@@ -146,6 +149,7 @@ export default {
         this.getTagSell(query1)
 
     },
+    
     methods: {
         getTagSell(params) {
             this.$api
@@ -157,7 +161,7 @@ export default {
                     console.log(error)
                 })
         },
-        
+
         getSell(params) {
             this.$api
                 .getSell(params)

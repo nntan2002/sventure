@@ -62,9 +62,8 @@ export default {
         if (response.status >= 200 && response.status <= 299) {
             const post = await response.json()
             if (!post.data.length) {
-                // redirect('/404')
+                redirect('/404')
             } else {
-                console.log(post)
                 return { post }
             }
         } else {

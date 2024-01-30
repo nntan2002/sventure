@@ -62,7 +62,6 @@ export default {
             if (!post.data.length) {
                 redirect('/404')
             } else {
-                console.log(post)
                 return { post }
             }
         } else {

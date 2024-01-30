@@ -162,7 +162,6 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$i18n.locale);
         if (this.$i18n.locale === 'vi') {
             const query = qs.stringify(
                 {

@@ -28,8 +28,8 @@
     </div>
 </template>
 <script>
-
 const qs = require('qs')
+
 export default {
     name: '',
     layout: 'default',
@@ -62,7 +62,6 @@ export default {
             if (!post.data.length) {
                 redirect('/404')
             } else {
-                console.log(post)
                 return { post }
             }
         } else {
@@ -173,7 +172,6 @@ export default {
                 this.banner.Title = this.postData?.Title || ''
                 this.banner.Image = this.postData?.Banner?.Image || ''
                 this.banner.urlShare = window.location.href
-                console.log(this.postData)
                 this.banner = JSON.parse(JSON.stringify(this.banner))
             } catch (error) { }
         }

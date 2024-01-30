@@ -4,7 +4,7 @@
             <b-container>
                 <div class="header-item">
                     <div class="logo-header">
-                        <nuxt-link to="/">
+                        <nuxt-link to="/" aria-label="khi nhấn nút này bạn sẽ trở về trang chủ">
                             <img src="~/assets/images/logo-sventure-01.png" alt="">
                         </nuxt-link>
                     </div>
@@ -12,7 +12,7 @@
                         <div class="search">
                             <form action="/tim-kiem">
                                 <input type="text" placeholder="Search.." name="search" required>
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <button type="submit" aria-label="nhấn để bất đầu tìm kiếm thông tin"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                         <div class="language">

@@ -18,7 +18,8 @@
                     class="swiper123">
                     <swiper-slide v-for="item in partners.Images.data" :key="item.index">
                         <div class="box-img" v-if="item.attributes.url">
-                            <b-img :src="baseURL + item.attributes.url" class="w-100"></b-img>
+                            <b-img :src="baseURL + item?.attributes?.formats?.thumbnail?.url" class="w-100"
+                                :alt="item.attributes.name"></b-img>
                         </div>
                     </swiper-slide>
                 </swiper>

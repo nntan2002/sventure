@@ -18,7 +18,7 @@
                                 :href="'tin-tuc/' + item.attributes.Slug">
                                 <div class="box-news">
                                     <div class="img-box">
-                                        <img :src="baseURL + item?.attributes?.Thumbnail?.data?.attributes?.url"
+                                        <img :src="baseURL + item?.attributes?.Thumbnail?.data?.attributes?.formats?.small?.url"
                                             :alt="item?.attributes?.Thumbnail?.data?.attributes?.name">
                                     </div>
                                     <div class="content-box">
@@ -40,7 +40,7 @@
                                     <b-row>
                                         <b-col cols="4">
                                             <div class="img-box h-100">
-                                                <img :src="baseURL + item.attributes.Thumbnail.data.attributes.url"
+                                                <img :src="baseURL + item.attributes?.Thumbnail?.data?.attributes?.formats?.thumbnail?.url"
                                                     :alt="item.attributes.Thumbnail.data.attributes.name"
                                                     style="height: 100%; aspect-ratio: unset;">
                                             </div>

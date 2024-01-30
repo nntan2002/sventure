@@ -122,6 +122,10 @@ export default {
                     property: 'twitter:description',
                     content: this.postData?.Seo?.description || '',
                 },
+                {
+                    name: "robots",
+                    content: "noindex",
+                },
             ],
         }
     },

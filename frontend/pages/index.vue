@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <home-page-Banner v-if="banner" :banner="banner" />
-    <About-us v-if="about" :about="about" class="mt-5"/>
+    <About-us v-if="about" :about="about" class="mt-5" />
     <home-page-Services v-if="category_services" :category_services="category_services" :title="TitleService" />
     <Partners v-if="about2" :partners="about2" />
     <home-page-News v-if="posts" :posts="posts" :title="TitlePost" />
@@ -47,7 +47,10 @@ export default {
       TitleService: null,
     }
   },
-  mounted() {
+  beforeDestroy() {
+    this.EventBus.$off('display-notification');
+  },
+  async mounted() {
     const query = qs.stringify(
       {
         populate: {
@@ -96,7 +99,7 @@ export default {
     )
 
     this.getHomePage(query)
-    this.getSectionPartners(query1)
+    await this.getSectionPartners(query1)
 
   },
   methods: {
@@ -117,8 +120,8 @@ export default {
           console.log(error)
         })
     },
-    getSectionPartners(params) {
-      this.$api
+    async getSectionPartners(params) {
+      await this.$api
         .getSectionPartners(params)
         .then((data) => {
           this.about2 = data.data.attributes || []

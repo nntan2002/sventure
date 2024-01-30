@@ -32,17 +32,6 @@
         }
       }
     },
-    "Features": {
-      "displayName": "Feature",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "feature.feature"
-    },
     "category_services": {
       "type": "relation",
       "relation": "oneToMany",

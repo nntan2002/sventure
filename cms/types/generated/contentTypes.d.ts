@@ -1309,12 +1309,6 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
           localized: true;
         };
       }>;
-    Features: Attribute.Component<'feature.feature', true> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     category_services: Attribute.Relation<
       'api::page-home.page-home',
       'oneToMany',

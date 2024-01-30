@@ -9,8 +9,7 @@ module.exports = ({ env }) => ({
                 port: 465,
                 secure: true,
                 auth: {
-                    user: 'digital@bcagroup.net',
-                    pass: 'qqtlhzdvghazhtyk',
+                    
                 },
             },
             settings: {

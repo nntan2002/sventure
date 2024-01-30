@@ -50,7 +50,7 @@ export default {
   beforeDestroy() {
     this.EventBus.$off('display-notification');
   },
-  async mounted() {
+  mounted() {
     const query = qs.stringify(
       {
         populate: {
@@ -99,7 +99,7 @@ export default {
     )
 
     this.getHomePage(query)
-    await this.getSectionPartners(query1)
+    this.getSectionPartners(query1)
 
   },
   methods: {
@@ -120,8 +120,8 @@ export default {
           console.log(error)
         })
     },
-    async getSectionPartners(params) {
-      await this.$api
+    getSectionPartners(params) {
+      this.$api
         .getSectionPartners(params)
         .then((data) => {
           this.about2 = data.data.attributes || []

@@ -21,7 +21,7 @@ export default {
             contact: null,
         }
     },
-    async mounted() {
+    mounted() {
         const query2 = qs.stringify(
             {
                 populate: {
@@ -36,7 +36,7 @@ export default {
             }
         )
 
-       await this.getSectionBuilding(query2)
+        this.getSectionBuilding(query2)
     },
     methods: {
         getSectionBuilding(params) {

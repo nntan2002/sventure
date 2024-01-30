@@ -44,10 +44,9 @@ export default {
             baseURL: this.$axios.defaults.baseURL,
             bannerList: [],
             swiperOptions: {
-                loop: true,
+                // loop: true,
                 grabCursor: false,
                 centeredSlides: true,
-                speed: 1000,
                 slidesPerView: 1,
                 pauseOnMouseEnter: true,
                 pagination: {
@@ -55,11 +54,6 @@ export default {
                     type: "bullets",
                     clickable: true,
                 },
-                autoplay: {
-                    delay: 60000,
-                    disableOnInteraction: true,
-                },
-
             },
 
 
